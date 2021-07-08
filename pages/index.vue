@@ -1,13 +1,35 @@
 <template>
   <div class="container">
-    <div>
-      <h1 class="title">Hello</h1>
-    </div>
+    <TitleCard v-for="(post, index) in posts" :key="index" :post="post" />
   </div>
 </template>
 
 <script>
-export default {};
+import TitleCard from "../components/TitleCard.vue";
+
+export default {
+  components: {
+    TitleCard
+  },
+  data() {
+    return {
+      posts: [
+        {
+          fields: {
+            title: "これはテストです",
+            publishedAt: new Date()
+          }
+        },
+        {
+          fields: {
+            title: "これはテスト222です",
+            publishedAt: new Date()
+          }
+        }
+      ]
+    };
+  }
+};
 </script>
 
 <style>

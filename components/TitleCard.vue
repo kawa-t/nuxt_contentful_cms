@@ -2,6 +2,9 @@
   <div>
     <article>
       <div>記事の窓</div>
+      <figure>
+        <div>{{ post.fields.title }}</div>
+      </figure>
     </article>
   </div>
 </template>
