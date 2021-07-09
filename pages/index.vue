@@ -25,6 +25,12 @@ export default {
             title: "これはテスト222です",
             publishedAt: new Date()
           }
+        },
+        {
+          fields: {
+            title: "これはテスト333です",
+            publishedAt: new Date()
+          }
         }
       ]
     };
