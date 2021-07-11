@@ -6,6 +6,7 @@
 
 <script>
 import TitleCard from "../components/TitleCard.vue";
+import sdkClient from "../plugins/contentful";
 
 export default {
   components: {
@@ -13,27 +14,20 @@ export default {
   },
   data() {
     return {
-      posts: [
-        {
-          fields: {
-            title: "これはテストです",
-            publishedAt: new Date()
-          }
-        },
-        {
-          fields: {
-            title: "これはテスト222です",
-            publishedAt: new Date()
-          }
-        },
-        {
-          fields: {
-            title: "これはテスト333です",
-            publishedAt: new Date()
-          }
-        }
-      ]
+      posts: []
     };
+  },
+  mounted: async function() {
+    try {
+      const response = await sdkClient.getEntries({
+        content_type: "blogPost",
+        order: "-fields.publishedAt"
+      });
+      // console.log(response.items);
+      this.posts = response.items;
+    } catch (error) {
+      // とりあえず何もしない
+    }
   }
 };
 </script>

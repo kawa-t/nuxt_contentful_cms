@@ -1,9 +1,11 @@
 <template>
   <div>
     <article>
-      <div>記事の窓</div>
       <figure>
-        <div>{{ post.fields.title }}</div>
+        <div>タイトル：：{{ post.fields.title }}</div>
+        <div>
+          <small>{{ getFormattedDate(post.fields.publishedAt) }}</small>
+        </div>
       </figure>
     </article>
   </div>
@@ -18,7 +20,7 @@ export default {
         return {
           fields: {
             title: "sample",
-            publishhehAt: new Data(),
+            publishhehAt: new Date(),
             headerImage: null
           }
         };
