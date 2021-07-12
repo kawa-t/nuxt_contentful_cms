@@ -1,14 +1,16 @@
 <template>
   <div>
-    <article>
-      <figure>
-        <div>タイトル：：{{ post.fields.title }}</div>
-        <div>
-          <small>{{ getFormattedDate(post.fields.publishedAt) }}</small>
-        </div>
-        <nuxt-link :to="linkTo(post)">記事みる</nuxt-link>
-      </figure>
-    </article>
+    <nuxt-link :to="linkTo(post)">
+      <article>
+        <figure>
+          <div>タイトル：：{{ post.fields.title }}</div>
+          <div>
+            <small>{{ getFormattedDate(post.fields.publishedAt) }}</small>
+          </div>
+          <div>{{ post.fields }}</div>
+        </figure>
+      </article>
+    </nuxt-link>
   </div>
 </template>
 <script>
@@ -22,16 +24,10 @@ export default {
           fields: {
             title: "sample",
             publishhehAt: new Date(),
-            headerImage: null,
-            slug: 1
+            headerImage: null
           }
         };
       }
-    }
-  },
-  computed: {
-    linkTo(post) {
-      return { name: "posts-slug", params: { slug: post.fields.slug } };
     }
   },
   methods: {
@@ -41,6 +37,9 @@ export default {
       const month = originDate.getMonth() + 1;
       const day = originDate.getDate();
       return `${year}年${month}月${day}日`;
+    },
+    linkTo(post) {
+      return { name: "posts-slug", params: { slug: post.fields.slug } };
     }
   }
 };

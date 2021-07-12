@@ -6,7 +6,7 @@
 
 <script>
 import TitleCard from "../components/TitleCard.vue";
-import sdkClient from "../plugins/contentful";
+import sdkClient from "~/plugins/contentful";
 
 export default {
   components: {

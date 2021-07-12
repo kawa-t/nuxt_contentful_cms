@@ -1,10 +1,21 @@
 <template>
   <div>
-    <h3>{{ post.fields.title }}</h3>
+    <h3CcC class="title">
+      {{ post.fields.title }}
+    </h3CcC>
+    <div class="has-text-right">
+      <p>
+        <!-- <small>{{ getFormattedDate(post.fields.publishedAt) }}</small> -->
+      </p>
+    </div>
+    <hr />
+    <div>
+      {{ post.fields.body }}
+    </div>
   </div>
 </template>
 <script>
-import sdkClient from "../../plugins/contentful";
+import sdkClient from "~/plugins/contentful";
 
 export default {
   computed: {
@@ -14,16 +25,26 @@ export default {
       );
     }
   },
-  mounted: async function() {
-    try {
-      const response = await sdkClient.getEntries({
+  async asyncData({ env }) {
+    let posts = [];
+    await sdkClient
+      .getEntries({
         content_type: "blogPost",
         order: "-fields.publishedAt"
-      });
-      // console.log(response.items);
-      this.posts = response.items;
-    } catch (error) {
-      // とりあえず何もしない
+      })
+      .then(res => {
+        posts = res.items;
+      })
+      .catch(console.error);
+    return { posts };
+  },
+  methods: {
+    getFormattedDate(date) {
+      const originDate = new Date(date);
+      const year = originDate.getFullYear();
+      const month = originDate.getMonth() + 1;
+      const day = originDate.getDate();
+      return `${year}年${month}月${day}日`;
     }
   }
 };
