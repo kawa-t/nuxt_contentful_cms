@@ -1,8 +1,8 @@
 <template>
   <div>
-    <h3CcC class="title">
+    <h4>
       {{ post.fields.title }}
-    </h3CcC>
+    </h4>
     <div class="has-text-right">
       <p>
         <!-- <small>{{ getFormattedDate(post.fields.publishedAt) }}</small> -->

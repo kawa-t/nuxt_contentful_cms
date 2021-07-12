@@ -6,7 +6,7 @@ export default {
   head: {
     title: "nuxt-contentfu-cms",
     htmlAttrs: {
-      lang: "en"
+      lang: "ja"
     },
     meta: [
       { charset: "utf-8" },
