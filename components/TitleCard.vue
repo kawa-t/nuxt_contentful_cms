@@ -6,6 +6,7 @@
         <div>
           <small>{{ getFormattedDate(post.fields.publishedAt) }}</small>
         </div>
+        <nuxt-link :to="linkTo(post)">記事みる</nuxt-link>
       </figure>
     </article>
   </div>
@@ -21,10 +22,16 @@ export default {
           fields: {
             title: "sample",
             publishhehAt: new Date(),
-            headerImage: null
+            headerImage: null,
+            slug: 1
           }
         };
       }
+    }
+  },
+  computed: {
+    linkTo(post) {
+      return { name: "posts-slug", params: { slug: post.fields.slug } };
     }
   },
   methods: {

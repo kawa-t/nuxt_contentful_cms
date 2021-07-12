@@ -23,7 +23,6 @@ export default {
         content_type: "blogPost",
         order: "-fields.publishedAt"
       });
-      // console.log(response.items);
       this.posts = response.items;
     } catch (error) {
       // とりあえず何もしない
