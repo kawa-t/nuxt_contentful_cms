@@ -5,7 +5,7 @@
     </h4>
     <div class="has-text-right">
       <p>
-        <!-- <small>{{ getFormattedDate(post.fields.publishedAt) }}</small> -->
+        <small>{{ $getFormattedDate(post.fields.publishedAt) }}</small>
       </p>
     </div>
     <hr />
@@ -15,36 +15,28 @@
   </div>
 </template>
 <script>
-import sdkClient from "~/plugins/contentful";
+import { mapState } from "vuex";
 
 export default {
   computed: {
+    ...mapState(["posts"]),
     post() {
       return this.posts.find(
         post => post.fields.slug === this.$route.params.slug
       );
     }
   },
-  async asyncData({ env }) {
-    let posts = [];
-    await sdkClient
-      .getEntries({
-        content_type: "blogPost",
-        order: "-fields.publishedAt"
-      })
-      .then(res => {
-        posts = res.items;
-      })
-      .catch(console.error);
-    return { posts };
-  },
-  methods: {
-    getFormattedDate(date) {
-      const originDate = new Date(date);
-      const year = originDate.getFullYear();
-      const month = originDate.getMonth() + 1;
-      const day = originDate.getDate();
-      return `${year}年${month}月${day}日`;
+  async asyncData({ payload, store, params, error }) {
+    const post =
+      payload ||
+      (await store.state.posts.find(post => post.fields.slug === params.slug));
+    if (post) {
+      return { post };
+    } else {
+      return error({
+        statusCode: "404",
+        message: "お探しのページは見つかりませんでした"
+      });
     }
   }
 };

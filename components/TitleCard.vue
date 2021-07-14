@@ -5,9 +5,8 @@
         <figure>
           <div>タイトル：：{{ post.fields.title }}</div>
           <div>
-            <small>{{ getFormattedDate(post.fields.publishedAt) }}</small>
+            <small>{{ $getFormattedDate(post.fields.publishedAt) }}</small>
           </div>
-          <div>{{ post.fields }}</div>
         </figure>
       </article>
     </nuxt-link>
@@ -31,13 +30,6 @@ export default {
     }
   },
   methods: {
-    getFormattedDate(date) {
-      const originDate = new Date(date);
-      const year = originDate.getFullYear();
-      const month = originDate.getMonth() + 1;
-      const day = originDate.getDate();
-      return `${year}年${month}月${day}日`;
-    },
     linkTo(post) {
       return { name: "posts-slug", params: { slug: post.fields.slug } };
     }

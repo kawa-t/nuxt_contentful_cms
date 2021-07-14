@@ -6,16 +6,15 @@
 
 <script>
 import TitleCard from "../components/TitleCard.vue";
-import sdkClient from "~/plugins/contentful";
+// import sdkClient from "~/plugins/contentful";
+import { mapState } from "vuex";
 
 export default {
   components: {
     TitleCard
   },
-  data() {
-    return {
-      posts: []
-    };
+  computed: {
+    ...mapState(["posts"])
   },
   mounted: async function() {
     try {

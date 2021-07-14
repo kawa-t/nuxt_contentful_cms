@@ -1,3 +1,5 @@
+const sdkClient = require("./plugins/contentful").default;
+
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: "static",
@@ -20,7 +22,7 @@ export default {
   css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: ["@/plugins/utils.js"],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -39,5 +41,25 @@ export default {
     CTF_SPACE_ID: process.env.CTF_SPACE_ID,
     CTF_CDA_ACCESS_TOKEN: process.env.CTF_CDA_ACCESS_TOKEN,
     CTF_PREVIEW_ACCESS_TOKEN: process.env.CTF_PREVIEW_ACCESS_TOKEN
+  },
+
+  router: {
+    middleware: ["getPosts"]
+  },
+
+  generate: {
+    routes() {
+      return Promise.all([
+        sdkClient.getEntries({
+          content_type: "blogPost"
+        })
+      ]).then(([posts]) => {
+        return [
+          ...posts.items.map(post => {
+            return { route: `posts/${post.fields.slug}`, payload: post };
+          })
+        ];
+      });
+    }
   }
 };
