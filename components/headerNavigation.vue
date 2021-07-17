@@ -1,6 +1,8 @@
 <template>
   <div>
-    <div>ヘッダー部分</div>
+    <NuxtLink to="/">
+      ヘッダー部分
+    </NuxtLink>
   </div>
 </template>
 <script>

@@ -52,11 +52,20 @@ export default {
       return Promise.all([
         sdkClient.getEntries({
           content_type: "blogPost"
+        }),
+        sdkClient.getEntries({
+          content_type: "category"
         })
-      ]).then(([posts]) => {
+      ]).then(([posts, categories]) => {
         return [
           ...posts.items.map(post => {
             return { route: `posts/${post.fields.slug}`, payload: post };
+          }),
+          ...categories.items.map(category => {
+            return {
+              route: `categories/${category.fields.slug}`,
+              payload: category
+            };
           })
         ];
       });

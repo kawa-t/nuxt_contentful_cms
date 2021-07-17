@@ -4,7 +4,9 @@
       <article>
         <figure>
           <div>タイトル：：{{ post.fields.title }}</div>
-          <p>{{ post.fields.category.fields.name }}</p>
+          <!-- <nuxt-link :to="linkTo(post)">
+            <div>{{ post.fields.category.fields.name }}</div>
+          </nuxt-link> -->
           <div>
             <small>{{ $getFormattedDate(post.fields.publishedAt) }}</small>
           </div>

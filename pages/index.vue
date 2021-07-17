@@ -6,7 +6,6 @@
 
 <script>
 import TitleCard from "../components/TitleCard.vue";
-// import sdkClient from "~/plugins/contentful";
 import { mapState } from "vuex";
 
 export default {
