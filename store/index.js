@@ -1,7 +1,8 @@
 import sdkClient from "@/plugins/contentful.js";
 
 export const state = () => ({
-  posts: []
+  posts: [],
+  categories: []
 });
 
 export const getters = {};

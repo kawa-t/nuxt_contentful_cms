@@ -9,6 +9,7 @@
       </p>
     </div>
     <hr />
+    <div>カテゴリ：{{ post.fields.category.fields.name }}</div>
     <div>
       {{ post.fields.body }}
     </div>

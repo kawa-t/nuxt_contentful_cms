@@ -4,6 +4,7 @@
       <article>
         <figure>
           <div>タイトル：：{{ post.fields.title }}</div>
+          <p>{{ post.fields.category.fields.name }}</p>
           <div>
             <small>{{ $getFormattedDate(post.fields.publishedAt) }}</small>
           </div>
