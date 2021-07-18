@@ -2,6 +2,7 @@
   <client-only>
     <div class="container">
       <TitleCard v-for="(post, index) in posts" :key="index" :post="post" />
+      <NuxtLink to="/tags">タグ一覧</NuxtLink>
     </div>
   </client-only>
 </template>

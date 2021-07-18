@@ -1,8 +1,6 @@
 <template>
   <div>
-    <div>
-      {{ category.fields.name }}
-    </div>
+    <h2>カテゴリー：{{ category.fields.name }}の記事一覧</h2>
     <div v-for="(post, i) in relatedPosts" :key="i">
       <nuxt-link :to="linkTo(post)">
         {{ post.fields.category.fields.name }}

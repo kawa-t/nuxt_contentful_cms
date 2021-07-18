@@ -9,26 +9,28 @@
   </div>
 </template>
 <script>
-import sdkClient from "~/plugins/contentful";
-
 export default {
-  async asyncData({ payload, params, error, store }) {
-    let tag = payload;
-    if (!tag) {
-      for (let i = 0; i < store.state.posts.length; i++) {
-        const tags = store.state.posts[i].fields.tags;
-        if (tags) tag = tags.find(tag => tag.fields.slug === params.slug);
-        if (tag) break;
-      }
-    }
+  asyncData({ payload, params, error, store }) {
+    const tag =
+      payload || store.state.tags.find(tag => tag.fields.slug === params.slug);
+    // let tag = payload;
+    // if (!tag) {
+    //   for (let i = 0; i < store.state.posts.length; i++) {
+    //     const tags = store.state.posts[i].fields.tags;
+    //     if (tags) tag = tags.find(tag => tag.fields.slug === params.slug);
+    //     if (tag) break;
+    //   }
+    // }
     if (tag) {
-      const relatedTagPosts = await sdkClient
-        .getEntries({
-          content_type: "blogPost",
-          "fields.tags.sys.id": tag.sys.id
-        })
-        .then(res => res.items)
-        .catch(console.error);
+      const relatedTagPosts = store.getters.associatePosts(tag);
+
+      // const relatedTagPosts = await sdkClient
+      //   .getEntries({
+      //     content_type: "blogPost",
+      //     "fields.tags.sys.id": tag.sys.id
+      //   })
+      //   .then(res => res.items)
+      //   .catch(console.error);
 
       return { tag, relatedTagPosts };
     } else {
