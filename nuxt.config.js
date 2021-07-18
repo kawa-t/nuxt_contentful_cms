@@ -55,6 +55,9 @@ export default {
         }),
         sdkClient.getEntries({
           content_type: "category"
+        }),
+        sdkClient.getEntries({
+          content_type: "tag"
         })
       ]).then(([posts, categories]) => {
         return [
@@ -65,6 +68,12 @@ export default {
             return {
               route: `categories/${category.fields.slug}`,
               payload: category
+            };
+          }),
+          ...tags.items.map(tag => {
+            return {
+              route: `tags/${tag.fields.slug}`,
+              payload: tag
             };
           })
         ];
