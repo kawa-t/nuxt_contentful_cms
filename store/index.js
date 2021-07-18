@@ -3,7 +3,8 @@ import sdkClient from "@/plugins/contentful.js";
 export const state = () => ({
   posts: [],
   categories: [],
-  tags: []
+  tags: [],
+  filterposts: []
 });
 
 export const getters = {
@@ -28,17 +29,6 @@ export const getters = {
       }
     }
     return posts;
-  },
-  setLinks(state, entries) {
-    state.tags = [];
-    state.categories = [];
-    for (let i = 0; i < entries.length; i++) {
-      const entry = entries[i];
-      if (entry.sys.contentType.sys.id === "tag") state.tags.push(entry);
-      else if (entry.sys.contentType.sys.id === "category")
-        state.categories.push(entry);
-    }
-    state.categories.sort((a, b) => a.fields.sort - b.fields.sort);
   }
 };
 
@@ -46,9 +36,6 @@ export const mutations = {
   setPosts(state, payload) {
     state.posts = payload;
   },
-  //  setCategories(state, payload) {
-  //    state.categories = payload;
-  //  },
   setLinks(state, entries) {
     state.tags = [];
     state.categories = [];
@@ -59,6 +46,9 @@ export const mutations = {
         state.categories.push(entry);
     }
     state.categories.sort((a, b) => a.fields.sort - b.fields.sort);
+  },
+  filterposts(state, status) {
+    state.filterposts = status;
   }
 };
 
@@ -76,16 +66,4 @@ export const actions = {
       })
       .catch(console.error);
   }
-  // カテゴリー
-  // async getCategories({ commit }) {
-  //   await sdkClient
-  //     .getEntries({
-  //       content_type: "category",
-  //       order: "fields.sort"
-  //     })
-  //     .then(res => {
-  //       commit("setCategories", res.items);
-  //     })
-  //     .catch(console.error);
-  // }
 };

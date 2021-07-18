@@ -1,7 +1,19 @@
 <template>
   <client-only>
     <div class="container">
-      <TitleCard v-for="(post, index) in posts" :key="index" :post="post" />
+      <div v-if="filterposts.length > 0">
+        <TitleCard
+          v-for="(post, index) in filterposts"
+          :key="index"
+          :post="post"
+        />
+      </div>
+      <div v-else>
+        <TitleCard v-for="(post, index) in posts" :key="index" :post="post" />
+      </div>
+
+      <button @click="filterPostData">自作PC</button>
+      <button @click="allPosts">全て表示</button>
       <NuxtLink to="/tags">タグ一覧</NuxtLink>
     </div>
   </client-only>
@@ -12,21 +24,27 @@ import TitleCard from "../components/TitleCard.vue";
 import { mapState } from "vuex";
 
 export default {
+  data: function() {
+    return {
+      filterData: []
+    };
+  },
   components: {
     TitleCard
   },
   computed: {
-    ...mapState(["posts"])
+    ...mapState(["posts", "filterposts"])
   },
-  mounted: async function() {
-    try {
-      const response = await sdkClient.getEntries({
-        content_type: "blogPost",
-        order: "-fields.publishedAt"
-      });
-      this.posts = response.items;
-    } catch (error) {
-      // とりあえず何もしない
+  methods: {
+    filterPostData: function() {
+      this.filterData = this.posts
+        .map(v => v)
+        .filter(v => v.fields.category.fields.name === "自作PC");
+
+      this.$store.commit("filterposts", this.filterData);
+    },
+    allPosts: function() {
+      this.$store.commit("filterposts", []);
     }
   }
 };

@@ -20,6 +20,8 @@
   </div>
 </template>
 <script>
+import { mapState } from "vuex";
+
 export default {
   props: {
     post: {
@@ -36,6 +38,9 @@ export default {
       }
     }
   },
+  computed: {
+    ...mapState(["filterposts"])
+  },
   methods: {
     linkTo(post) {
       return { name: "posts-slug", params: { slug: post.fields.slug } };
@@ -46,6 +51,9 @@ export default {
         params: { slug: tag.fields.slug }
       };
     }
+  },
+  mounted: function() {
+    this.$store.commit("filterposts", []);
   }
 };
 </script>
