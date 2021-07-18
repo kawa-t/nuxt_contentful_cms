@@ -12,7 +12,17 @@
         <TitleCard v-for="(post, index) in posts" :key="index" :post="post" />
       </div>
 
-      <button @click="filterPostData">自作PC</button>
+      <div>
+        <button
+          v-for="(category, index) in categories"
+          :key="index"
+          :category="category"
+          @click="filterPostData(category.fields.name)"
+        >
+          {{ category.fields.name }}
+        </button>
+      </div>
+
       <button @click="allPosts">全て表示</button>
       <NuxtLink to="/tags">タグ一覧</NuxtLink>
     </div>
@@ -21,6 +31,7 @@
 
 <script>
 import TitleCard from "../components/TitleCard.vue";
+import FilterButoon from "../components/atoms/FilterButton.vue";
 import { mapState } from "vuex";
 
 export default {
@@ -30,16 +41,17 @@ export default {
     };
   },
   components: {
-    TitleCard
+    TitleCard,
+    FilterButoon
   },
   computed: {
-    ...mapState(["posts", "filterposts"])
+    ...mapState(["posts", "filterposts", "categories"])
   },
   methods: {
-    filterPostData: function() {
+    filterPostData: function(name) {
       this.filterData = this.posts
         .map(v => v)
-        .filter(v => v.fields.category.fields.name === "自作PC");
+        .filter(v => v.fields.category.fields.name === name);
 
       this.$store.commit("filterposts", this.filterData);
     },
