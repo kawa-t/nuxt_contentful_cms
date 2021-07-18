@@ -4,13 +4,17 @@
       <article>
         <figure>
           <div>タイトル：：{{ post.fields.title }}</div>
-          <!-- <nuxt-link :to="linkTo(post)">
-            <div>{{ post.fields.category.fields.name }}</div>
-          </nuxt-link> -->
           <div>
             <small>{{ $getFormattedDate(post.fields.publishedAt) }}</small>
           </div>
         </figure>
+        <template v-if="post.fields.tags">
+          <div v-for="tag in post.fields.tags" :key="tag.sys.id">
+            <nuxt-link :to="linkToTag(tag)">
+              タグだよ：{{ tag.fields.name }}
+            </nuxt-link>
+          </div>
+        </template>
       </article>
     </nuxt-link>
   </div>
@@ -35,6 +39,12 @@ export default {
   methods: {
     linkTo(post) {
       return { name: "posts-slug", params: { slug: post.fields.slug } };
+    },
+    linkToTag(tag) {
+      return {
+        name: "tags-slug",
+        params: { slug: tag.fields.slug }
+      };
     }
   }
 };

@@ -8,10 +8,8 @@
     </div>
     <hr />
     <nuxt-link :to="linkToCategory(post)">
-      {{ post.fields.category.fields.slug }}
+      カテゴリ：{{ post.fields.category.fields.name }}
     </nuxt-link>
-
-    <div>カテゴリ：{{ post.fields.category.fields.name }}</div>
     <div>
       {{ post.fields.body }}
     </div>

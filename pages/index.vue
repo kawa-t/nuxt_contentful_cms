@@ -1,7 +1,9 @@
 <template>
-  <div class="container">
-    <TitleCard v-for="(post, index) in posts" :key="index" :post="post" />
-  </div>
+  <client-only>
+    <div class="container">
+      <TitleCard v-for="(post, index) in posts" :key="index" :post="post" />
+    </div>
+  </client-only>
 </template>
 
 <script>
