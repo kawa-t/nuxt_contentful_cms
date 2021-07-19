@@ -1,4 +1,5 @@
 import sdkClient from "@/plugins/contentful.js";
+import defaultHeaderimg from "~/assets/images/defaultHeaderimg.png";
 
 export const state = () => ({
   posts: [],
@@ -8,6 +9,16 @@ export const state = () => ({
 });
 
 export const getters = {
+  setHeaderImg: () => post => {
+    if (!!post.fields.headerImage && !!post.fields.headerImage.fields) {
+      return {
+        url: `https:${post.fields.headerImage.fields.file.url}`,
+        title: post.fields.headerImage.fields.file.url
+      };
+    } else {
+      return { url: defaultHeaderimg, title: "defaultImage" };
+    }
+  },
   relatedPosts: state => category => {
     const posts = [];
     for (let i = 0; i < state.posts.length; i++) {

@@ -31,7 +31,6 @@
 
 <script>
 import TitleCard from "../components/TitleCard.vue";
-import FilterButoon from "../components/atoms/FilterButton.vue";
 import { mapState } from "vuex";
 
 export default {
@@ -41,8 +40,7 @@ export default {
     };
   },
   components: {
-    TitleCard,
-    FilterButoon
+    TitleCard
   },
   computed: {
     ...mapState(["posts", "filterposts", "categories"])

@@ -6,6 +6,10 @@
         <small>{{ $getFormattedDate(post.fields.publishedAt) }}</small>
       </p>
     </div>
+    <div>
+      <!-- <div>{{ post.fields.headerImage.fields.file.url }}</div> -->
+      <img :src="setHeaderImg(post).url" :alt="setHeaderImg(post).title" />
+    </div>
     <hr />
     <nuxt-link :to="linkToCategory(post)">
       カテゴリ：{{ post.fields.category.fields.name }}
@@ -16,11 +20,12 @@
   </div>
 </template>
 <script>
-import { mapState } from "vuex";
+import { mapState, mapGetters } from "vuex";
 
 export default {
   computed: {
-    ...mapState(["posts", "categories"])
+    ...mapState(["posts", "categories"]),
+    ...mapGetters(["setHeaderImg"])
   },
   async asyncData({ payload, store, params, error }) {
     const post =
