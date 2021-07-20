@@ -3,6 +3,7 @@
     <nuxt-link :to="linkTo(post)">
       <article>
         <figure>
+          <img :src="setHeaderImg(post).url" :alt="setHeaderImg(post).title" />
           <div>タイトル：：{{ post.fields.title }}</div>
           <div>
             <small>{{ $getFormattedDate(post.fields.publishedAt) }}</small>
@@ -11,7 +12,7 @@
         <template v-if="post.fields.tags">
           <div v-for="tag in post.fields.tags" :key="tag.sys.id">
             <nuxt-link :to="linkToTag(tag)">
-              タグだよ：{{ tag.fields.name }}
+              タグ：{{ tag.fields.name }}
             </nuxt-link>
           </div>
         </template>
@@ -20,7 +21,7 @@
   </div>
 </template>
 <script>
-import { mapState } from "vuex";
+import { mapState, mapGetters } from "vuex";
 
 export default {
   props: {
@@ -39,7 +40,8 @@ export default {
     }
   },
   computed: {
-    ...mapState(["filterposts"])
+    ...mapState(["filterposts"]),
+    ...mapGetters(["setHeaderImg"])
   },
   methods: {
     linkTo(post) {
