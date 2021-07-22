@@ -3,16 +3,22 @@
     <main class="flex flex-wrap h-screen items-center">
       <article class="w-full lg:w-1/4 p-2">
         <div>
+          <!-- <HeaderNavigation /> -->
           <div class="flex">
             <div class="text-3xl font-bold">Category</div>
-            <button class="mx-4 mt-3" @click="allPosts">すべて表示</button>
+            <button
+              class="mx-4 my-2 border-b-2 border-white hover:border-yellow-300 transition duration-300 ease-in-out pt-2"
+              @click="allPosts"
+            >
+              すべて表示
+            </button>
           </div>
           <button
             v-for="(category, index) in categories"
             :key="index"
             :category="category"
             @click="filterPostData(category.fields.name, index)"
-            class="px-5 py-4"
+            class="px-5 py-4 border-l-4 border-b-4 hover:border-yellow-200"
             :class="{ activeCategory: activeItem === index }"
           >
             {{ category.fields.name }}
@@ -45,6 +51,7 @@
 <script>
 import TitleCard from "../components/TitleCard.vue";
 import TagsList from "../pages/tags";
+import HeaderNavigation from "../components/headerNavigation.vue";
 import { mapState } from "vuex";
 
 export default {
@@ -56,7 +63,8 @@ export default {
   },
   components: {
     TitleCard,
-    TagsList
+    TagsList,
+    HeaderNavigation
   },
   computed: {
     ...mapState(["posts", "filterposts", "categories"])
@@ -86,6 +94,6 @@ export default {
 
 <style lang="postcss" scoped>
 .activeCategory {
-  @apply border-l-4 border-b-4 border-yellow-200 mx-1;
+  @apply border-l-4 border-b-4 border-yellow-200 text-yellow-500;
 }
 </style>

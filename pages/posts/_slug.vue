@@ -1,16 +1,17 @@
 <template>
   <main class="flex flex-wrap">
     <div class="w-full lg:w-1/4">
+      <HeaderNavigation />
       <!-- <div> -->
       <!-- <nuxt-link :to="linkToCategory(post)">
           {{ post.fields.category.fields.name }}
         </nuxt-link> -->
       <!-- </div> -->
     </div>
-    <div class="w-full lg:w-3/4">
-      <div class="w-full">
+    <div class="w-3/4 lg:w-3/4">
+      <div class="w-3/4">
         <img
-          class="w-2/3 h-1/5"
+          class="w-full object-cover h-72"
           :src="setHeaderImg(post).url"
           :alt="setHeaderImg(post).title"
         />
@@ -24,11 +25,19 @@
       <div class="w-2/3 mt-5">
         {{ post.fields.body }}
       </div>
+      <NuxtLink to="/">
+        <div
+          class="border-t-2 w-3/4 mt-5 py-6 text-right hover:text-yellow-500 transition duration-300 ease-in-out"
+        >
+          記事一覧にもどる
+        </div>
+      </NuxtLink>
     </div>
   </main>
 </template>
 <script>
 import { mapState, mapGetters } from "vuex";
+import HeaderNavigation from "../../components/headerNavigation.vue";
 
 export default {
   computed: {
@@ -47,6 +56,9 @@ export default {
         message: "お探しのページは見つかりませんでした"
       });
     }
+  },
+  components: {
+    HeaderNavigation
   },
   methods: {
     linkToCategory(post) {

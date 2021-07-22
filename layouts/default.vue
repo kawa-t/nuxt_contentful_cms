@@ -1,15 +1,15 @@
 <template>
   <div>
-    <Header />
+    <!-- <Header /> -->
     <Nuxt />
   </div>
 </template>
 <script>
-import Header from "../components/headerNavigation";
+// import Header from "../components/headerNavigation";
 
 export default {
   components: {
-    Header
+    // Header
   }
 };
 </script>

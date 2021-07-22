@@ -1,12 +1,19 @@
 <template>
-  <div class="p-5 flex-none w-2/5">
+  <div class="p-5 flex-none w-2/5 transition duration-300">
     <nuxt-link :to="linkTo(post)">
-      <div class="max-w-lg rounded overflow-hidden shadow-lg mb-4">
-        <img
-          class="w-full h-64 object-cover"
-          :src="setHeaderImg(post).url"
-          :alt="setHeaderImg(post).title"
-        />
+      <div
+        class="max-w-lg rounded overflow-hidden shadow-lg mb-4"
+        @mouseover="CardOn"
+        @mouseleave="CardOff"
+        :class="{ activeCard: activityCard }"
+      >
+        <div class="overflow-hidden h-64">
+          <img
+            class="w-full h-64 object-cover"
+            :src="setHeaderImg(post).url"
+            :alt="setHeaderImg(post).title"
+          />
+        </div>
         <div class="px-6 py-4 pb-2">
           <div class="font-bold text-xl mb-2">
             {{ post.fields.title }}
@@ -51,6 +58,11 @@ export default {
       }
     }
   },
+  data: function() {
+    return {
+      activityCard: false
+    };
+  },
   computed: {
     ...mapState(["filterposts"]),
     ...mapGetters(["setHeaderImg"])
@@ -64,6 +76,12 @@ export default {
         name: "tags-slug",
         params: { slug: tag.fields.slug }
       };
+    },
+    CardOn: function() {
+      this.activityCard = true;
+    },
+    CardOff: function() {
+      this.activityCard = false;
     }
   },
   mounted: function() {
@@ -78,5 +96,8 @@ export default {
   &:hover {
     @apply bg-yellow-200;
   }
+}
+.activeCard {
+  @apply transform shadow-xl transition duration-300 ease-in-out;
 }
 </style>
