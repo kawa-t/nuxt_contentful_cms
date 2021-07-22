@@ -59,7 +59,9 @@ export const mutations = {
     state.categories.sort((a, b) => a.fields.sort - b.fields.sort);
   },
   filterposts(state, status) {
-    state.filterposts = status;
+    if (status.length !== 0) {
+      state.filterposts = status;
+    }
   }
 };
 

@@ -1,9 +1,9 @@
 <template>
-  <div class="p-5">
+  <div class="p-5 flex-none w-2/5">
     <nuxt-link :to="linkTo(post)">
       <div class="max-w-lg rounded overflow-hidden shadow-lg mb-4">
         <img
-          class="w-full"
+          class="w-full h-64 object-cover"
           :src="setHeaderImg(post).url"
           :alt="setHeaderImg(post).title"
         />

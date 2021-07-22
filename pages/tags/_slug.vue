@@ -1,41 +1,61 @@
 <template>
-  <div>
-    <h1>タグ：{{ tag.fields.name }}の記事一覧</h1>
-    <div v-for="(post, i) in relatedTagPosts" :key="i">
-      <nuxt-link :to="linkToPost(post)">
-        {{ post.fields.title }}
-      </nuxt-link>
-    </div>
-  </div>
+  <main class="flex flex-wrap h-screen items-center">
+    <article class="w-full lg:w-1/4 p-2">
+      <div class="text-3xl font-bold">Tag:{{ tag.fields.name }}</div>
+      <div>
+        <TagsList />
+      </div>
+    </article>
+    <article class="w-full lg:w-3/4">
+      <div class="flex overflow-x-auto align-items">
+        <div
+          v-for="(post, i) in relatedTagPosts"
+          :key="i"
+          class="max-w-lg rounded overflow-hidden shadow-lg m-6"
+        >
+          <nuxt-link :to="linkToPost(post)">
+            <img
+              class="w-full h-64 object-cover"
+              :src="setHeaderImg(post).url"
+              :alt="setHeaderImg(post).title"
+            />
+            <div class="px-6 py-4">
+              <div class="font-bold text-xl mb-2">
+                {{ post.fields.title }}
+              </div>
+              <div>
+                <small>{{ $getFormattedDate(post.fields.publishedAt) }}</small>
+              </div>
+            </div>
+          </nuxt-link>
+        </div>
+      </div>
+    </article>
+  </main>
 </template>
 <script>
+import { mapState, mapGetters } from "vuex";
+import TagsList from "../tags/";
+
 export default {
   asyncData({ payload, params, error, store }) {
     const tag =
       payload || store.state.tags.find(tag => tag.fields.slug === params.slug);
-    // let tag = payload;
-    // if (!tag) {
-    //   for (let i = 0; i < store.state.posts.length; i++) {
-    //     const tags = store.state.posts[i].fields.tags;
-    //     if (tags) tag = tags.find(tag => tag.fields.slug === params.slug);
-    //     if (tag) break;
-    //   }
-    // }
+
     if (tag) {
       const relatedTagPosts = store.getters.associatePosts(tag);
-
-      // const relatedTagPosts = await sdkClient
-      //   .getEntries({
-      //     content_type: "blogPost",
-      //     "fields.tags.sys.id": tag.sys.id
-      //   })
-      //   .then(res => res.items)
-      //   .catch(console.error);
 
       return { tag, relatedTagPosts };
     } else {
       error({ statusCode: 400 });
     }
+  },
+  components: {
+    TagsList
+  },
+  computed: {
+    ...mapState(["filterposts"]),
+    ...mapGetters(["setHeaderImg"])
   },
   methods: {
     linkToPost(post) {

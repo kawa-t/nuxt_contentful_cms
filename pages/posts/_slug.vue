@@ -1,23 +1,31 @@
 <template>
-  <div>
-    <h3>{{ post.fields.title }}</h3>
-    <div class="has-text-right">
-      <p>
-        <small>{{ $getFormattedDate(post.fields.publishedAt) }}</small>
-      </p>
+  <main class="flex flex-wrap">
+    <div class="w-full lg:w-1/4">
+      <!-- <div> -->
+      <!-- <nuxt-link :to="linkToCategory(post)">
+          {{ post.fields.category.fields.name }}
+        </nuxt-link> -->
+      <!-- </div> -->
     </div>
-    <div>
-      <!-- <div>{{ post.fields.headerImage.fields.file.url }}</div> -->
-      <img :src="setHeaderImg(post).url" :alt="setHeaderImg(post).title" />
+    <div class="w-full lg:w-3/4">
+      <div class="w-full">
+        <img
+          class="w-2/3 h-1/5"
+          :src="setHeaderImg(post).url"
+          :alt="setHeaderImg(post).title"
+        />
+      </div>
+      <div class="text-2xl pt-3 font-bold">{{ post.fields.title }}</div>
+      <div>
+        <p>
+          <small>{{ $getFormattedDate(post.fields.publishedAt) }}</small>
+        </p>
+      </div>
+      <div class="w-2/3 mt-5">
+        {{ post.fields.body }}
+      </div>
     </div>
-    <hr />
-    <nuxt-link :to="linkToCategory(post)">
-      カテゴリ：{{ post.fields.category.fields.name }}
-    </nuxt-link>
-    <div>
-      {{ post.fields.body }}
-    </div>
-  </div>
+  </main>
 </template>
 <script>
 import { mapState, mapGetters } from "vuex";

@@ -1,11 +1,10 @@
 <template>
   <div>
-    <h2>タグ一覧ページ</h2>
-    <div v-for="(tag, i) in tags" :key="i">
+    <span class="badge my-5 mx-2" v-for="(tag, i) in tags" :key="i">
       <nuxt-link :to="linkToTag(tag)">
         {{ tag.fields.name }}
       </nuxt-link>
-    </div>
+    </span>
   </div>
 </template>
 
@@ -22,3 +21,12 @@ export default {
   }
 };
 </script>
+
+<style lang="postcss" scoped>
+.badge {
+  @apply inline-block bg-yellow-100 rounded-full px-3 py-1 text-sm font-semibold text-yellow-500;
+  &:hover {
+    @apply bg-yellow-200;
+  }
+}
+</style>
