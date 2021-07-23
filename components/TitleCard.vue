@@ -1,5 +1,7 @@
 <template>
-  <div class="p-5 flex-none w-2/5 transition duration-300">
+  <div
+    class="p-5 flex-none lg:w-2/5 md:w-2/4 sm:w-1/2 xs:w-5/6 transition duration-300 z-10"
+  >
     <nuxt-link :to="linkTo(post)">
       <div
         class="max-w-lg rounded overflow-hidden shadow-lg mb-4"
@@ -14,7 +16,7 @@
             :alt="setHeaderImg(post).title"
           />
         </div>
-        <div class="px-6 py-4 pb-2">
+        <div class="px-6 py-4 pb-2 bg-white">
           <div class="font-bold text-xl mb-2">
             {{ post.fields.title }}
           </div>

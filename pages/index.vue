@@ -1,9 +1,19 @@
 <template>
   <client-only>
-    <main class="flex flex-wrap h-screen items-center">
+    <main class="flex flex-wrap h-screen items-center xs:min-w-full">
       <article class="w-full lg:w-1/4 p-2">
+        <div class="mb-18">
+          <div class="text-2xl font-bold">kata</div>
+          <div class="flex mb-4">
+            <div class="p-3 mx-6">
+              <a href="https://github.com/kawa-t" target="_blank">github</a>
+            </div>
+            <div class="p-3 mx-6">
+              <a href="https://twitter.com/denknit" target="_blank">Twitter</a>
+            </div>
+          </div>
+        </div>
         <div>
-          <!-- <HeaderNavigation /> -->
           <div class="flex">
             <div class="text-3xl font-bold">Category</div>
             <button
@@ -29,7 +39,8 @@
           <TagsList />
         </div>
       </article>
-      <article class="w-full lg:w-3/4">
+      <article class="w-full lg:w-3/4 overflow-hidden">
+        <BackgoundAnimetion />
         <div
           class="flex overflow-x-auto align-items"
           v-if="filterposts.length !== 0"
@@ -43,6 +54,9 @@
         <div class="flex overflow-x-auto" v-else>
           <TitleCard v-for="(post, index) in posts" :key="index" :post="post" />
         </div>
+        <div>
+          <HeaderNavigation />
+        </div>
       </article>
     </main>
   </client-only>
@@ -52,6 +66,7 @@
 import TitleCard from "../components/TitleCard.vue";
 import TagsList from "../pages/tags";
 import HeaderNavigation from "../components/headerNavigation.vue";
+import BackgoundAnimetion from "../components/BackgoundAnimetion";
 import { mapState } from "vuex";
 
 export default {
@@ -64,7 +79,8 @@ export default {
   components: {
     TitleCard,
     TagsList,
-    HeaderNavigation
+    HeaderNavigation,
+    BackgoundAnimetion
   },
   computed: {
     ...mapState(["posts", "filterposts", "categories"])

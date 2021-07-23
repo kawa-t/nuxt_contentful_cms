@@ -1,6 +1,5 @@
 <template>
   <div>
-    <HeaderNavigation />
     <span class="badge my-5 mx-2" v-for="(tag, i) in tags" :key="i">
       <nuxt-link :to="linkToTag(tag)">
         {{ tag.fields.name }}
@@ -11,14 +10,10 @@
 
 <script>
 import { mapState } from "vuex";
-import HeaderNavigation from "../../components/headerNavigation.vue";
 
 export default {
   computed: {
     ...mapState(["posts", "tags"])
-  },
-  components: {
-    HeaderNavigation
   },
   methods: {
     linkToTag(tag) {

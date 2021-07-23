@@ -1,7 +1,6 @@
 <template>
   <main class="flex flex-wrap">
     <div class="w-full lg:w-1/4">
-      <HeaderNavigation />
       <!-- <div> -->
       <!-- <nuxt-link :to="linkToCategory(post)">
           {{ post.fields.category.fields.name }}
@@ -33,6 +32,7 @@
         </div>
       </NuxtLink>
     </div>
+    <HeaderNavigation />
   </main>
 </template>
 <script>
