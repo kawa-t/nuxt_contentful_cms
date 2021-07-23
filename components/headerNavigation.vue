@@ -35,6 +35,13 @@ export default {
   position: absolute;
   bottom: 0px;
   right: 0px;
+  z-index: -10;
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    bottom: -55px;
+  }
 }
 
 .circle {
@@ -48,7 +55,6 @@ export default {
 
 .cycleType {
   background: #fc2;
-  z-index: -10;
   border-radius: 40% 70% 50% 30%/40% 50% 30% 50%;
   transition-duration: 0.3s;
 }

@@ -1,6 +1,6 @@
 <template>
   <div
-    class="p-5 flex-none lg:w-2/5 md:w-2/4 sm:w-1/2 xs:w-5/6 transition duration-300 z-10"
+    class="p-5 flex-none lg:w-2/5 md:w-2/4 sm:w-1/2 xs:w-11/12 transition duration-300 z-10"
   >
     <nuxt-link :to="linkTo(post)">
       <div
