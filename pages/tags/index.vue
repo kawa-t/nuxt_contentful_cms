@@ -27,7 +27,7 @@ export default {
     filterPostData: function(name) {
       this.filterData = this.posts
         .map(v => v)
-        .filter(v => v.fields.category.fields.name === name);
+        .filter(v => v.fields.tag.fields.name === name);
 
       this.$store.commit("filterposts", this.filterData);
     }
