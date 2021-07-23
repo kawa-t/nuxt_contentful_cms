@@ -5,10 +5,14 @@
         <div class="mb-18">
           <div class="text-2xl font-bold">kata</div>
           <div class="flex mb-4">
-            <div class="p-3 mx-6">
+            <div
+              class="p-3 mx-6 border-white hover:border-yellow-300 transition duration-300 ease-in-out"
+            >
               <a href="https://github.com/kawa-t" target="_blank">github</a>
             </div>
-            <div class="p-3 mx-6">
+            <div
+              class="p-3 mx-6 border-white hover:border-yellow-300 transition duration-300 ease-in-out"
+            >
               <a href="https://twitter.com/denknit" target="_blank">Twitter</a>
             </div>
           </div>
@@ -110,6 +114,6 @@ export default {
 
 <style lang="postcss" scoped>
 .activeCategory {
-  @apply border-l-4 border-b-4 border-yellow-200 text-yellow-500;
+  @apply border-l-4 border-b-4 border-yellow-200 text-yellow-500 xs:text-yellow-700 xs:border-yellow-500;
 }
 </style>

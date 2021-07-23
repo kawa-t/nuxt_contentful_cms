@@ -40,7 +40,14 @@ export default {
 
 @media screen and (max-width: 480px) {
   .container {
-    bottom: -55px;
+    width: 300px;
+    height: 300px;
+    bottom: 0px;
+    right: 100px;
+  }
+  .circle {
+    width: 300px;
+    height: 300px;
   }
 }
 
@@ -78,11 +85,15 @@ export default {
   }
 
   75% {
-    border-radius: 90% 60% 40% 70% / 70% 50% 80% 40%;
+    border-radius: 80% 60% 40% 70% / 70% 50% 80% 40%;
+  }
+
+  90% {
+    border-radius: 60% 60% 50% 550% / 50% 40% 40% 50%;
   }
 
   100% {
-    border-radius: 60% 50% 70% 80% / 50% 60% 50% 70%;
+    border-radius: 40% 70% 50% 30%/40% 50% 30% 50%;
   }
 }
 </style>

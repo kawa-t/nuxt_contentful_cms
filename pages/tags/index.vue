@@ -1,7 +1,7 @@
 <template>
   <div>
     <span
-      class="badge my-5 mx-2"
+      class="badge my-5 mx-2 cursor-pointer"
       v-for="(tag, i) in tags"
       :key="i"
       @click="filterPostData(tag.fields.name)"
@@ -25,11 +25,20 @@ export default {
       return { name: "tags-slug", params: { slug: tag.fields.slug } };
     },
     filterPostData: function(name) {
-      this.filterData = this.posts
-        .map(v => v)
-        .filter(v => v.fields.tag.fields.name === name);
+      this.filterData = this.posts.map(v => v);
+      //   .filter(v => v.fields.tags[0].fields.name === name);
 
-      this.$store.commit("filterposts", this.filterData);
+      let fileterTagData = [];
+      for (let i = 0; i < this.filterData.length; i++) {
+        const post = this.filterData[i];
+        for (let i = 0; i < post.fields.tags.length; i++) {
+          if (post.fields.tags[i].fields.name === name) {
+            fileterTagData.push(post);
+          }
+        }
+      }
+
+      this.$store.commit("filterposts", fileterTagData);
     }
   }
 };
