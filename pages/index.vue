@@ -34,7 +34,7 @@
             {{ category.fields.name }}
           </button>
         </div>
-        <div class="mt-4">
+        <div class="mt-4 ">
           <div class="text-3xl font-bold">Tags</div>
           <TagsList />
         </div>

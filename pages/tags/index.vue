@@ -1,9 +1,14 @@
 <template>
   <div>
-    <span class="badge my-5 mx-2" v-for="(tag, i) in tags" :key="i">
-      <nuxt-link :to="linkToTag(tag)">
-        {{ tag.fields.name }}
-      </nuxt-link>
+    <span
+      class="badge my-5 mx-2"
+      v-for="(tag, i) in tags"
+      :key="i"
+      @click="filterPostData(tag.fields.name)"
+    >
+      <!-- <nuxt-link :to="linkToTag(tag)"> -->
+      {{ tag.fields.name }}
+      <!-- </nuxt-link> -->
     </span>
   </div>
 </template>
@@ -18,6 +23,13 @@ export default {
   methods: {
     linkToTag(tag) {
       return { name: "tags-slug", params: { slug: tag.fields.slug } };
+    },
+    filterPostData: function(name) {
+      this.filterData = this.posts
+        .map(v => v)
+        .filter(v => v.fields.category.fields.name === name);
+
+      this.$store.commit("filterposts", this.filterData);
     }
   }
 };
