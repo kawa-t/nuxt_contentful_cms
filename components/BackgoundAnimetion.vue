@@ -3,9 +3,6 @@
     <div class="AnimetionCircle"></div>
   </div>
 </template>
-<script>
-export default {};
-</script>
 <style lang="postcss" scoped>
 .AnimetionContiner {
   width: 400px;
