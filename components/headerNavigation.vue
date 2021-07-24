@@ -32,7 +32,7 @@ export default {
 .container {
   width: 400px;
   height: 400px;
-  position: absolute;
+  position: fixed;
   bottom: 0px;
   right: 0px;
   z-index: -10;
@@ -40,11 +40,10 @@ export default {
 
 @media screen and (max-width: 480px) {
   .container {
-    width: 300px;
-    height: 300px;
+    width: 350px !important;
+    height: 350px !important;
     bottom: 0px;
     right: 100px;
-    position: fixed;
   }
   .circle {
     width: 300px;
