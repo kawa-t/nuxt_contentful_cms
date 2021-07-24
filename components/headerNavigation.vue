@@ -32,7 +32,7 @@ export default {
 .container {
   width: 400px;
   height: 400px;
-  position: fixed;
+  position: absolute;
   bottom: 0px;
   right: 0px;
   z-index: -10;
@@ -40,8 +40,8 @@ export default {
 
 @media screen and (max-width: 480px) {
   .container {
-    width: 350px !important;
-    height: 350px !important;
+    width: 300px;
+    height: 300px;
     bottom: 0px;
     right: 100px;
   }
