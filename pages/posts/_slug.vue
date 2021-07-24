@@ -22,7 +22,10 @@
         </p>
       </div>
       <div class="lg:w-3/4 xs:w-full mt-5 xs:p-2 leading-loose tracking-wide">
-        {{ post.fields.body }}
+        <div
+          style="white-space: pre-wrap;"
+          v-html="toHtmlString(post.fields.body)"
+        ></div>
       </div>
       <NuxtLink to="/">
         <div
@@ -38,6 +41,7 @@
 <script>
 import { mapState, mapGetters } from "vuex";
 import HeaderNavigation from "../../components/headerNavigation.vue";
+import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 
 export default {
   computed: {
@@ -66,6 +70,24 @@ export default {
         name: "categories-slug",
         params: { slug: post.fields.category.fields.slug }
       };
+    },
+    toHtmlString(post) {
+      const document = {
+        nodeType: "document",
+        content: [
+          {
+            nodeType: "paragraph",
+            content: [
+              {
+                nodeType: "text",
+                value: post,
+                marks: []
+              }
+            ]
+          }
+        ]
+      };
+      return documentToHtmlString(document);
     }
   }
 };
