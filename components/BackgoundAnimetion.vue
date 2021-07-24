@@ -18,10 +18,9 @@ export default {};
 .AnimetionCircle {
   width: 400px;
   height: 400px;
-  border-radius: 50%;
   animation: uneune 15s linear infinite;
   background: #fc2;
-  border-radius: 40% 70% 50% 30%/40% 50% 30% 50%;
+  /* border-radius: 40% 70% 50% 30%/40% 50% 30% 50%; */
   transition-duration: 0.3s;
   mix-blend-mode: multiply;
 }

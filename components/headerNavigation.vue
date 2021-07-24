@@ -1,33 +1,10 @@
 <template>
-  <div class="container lg:visible">
+  <div class="container">
     <NuxtLink to="/">
-      <div
-        class="circle cycleType"
-        @mouseover="TitleOver"
-        @mouseleave="titleLeave"
-        :class="{ activeCycle: activityCycle }"
-      ></div>
+      <div class="circle cycleType"></div>
     </NuxtLink>
   </div>
 </template>
-<script>
-export default {
-  data: function() {
-    return {
-      titleLink: false,
-      activityCycle: false
-    };
-  },
-  methods: {
-    TitleOver: function() {
-      this.activityCycle = true;
-    },
-    titleLeave: function() {
-      this.activityCycle = false;
-    }
-  }
-};
-</script>
 <style lang="postcss" scoped>
 .container {
   width: 400px;
@@ -54,7 +31,6 @@ export default {
 .circle {
   width: 400px;
   height: 400px;
-  border-radius: 50%;
   cursor: pointer;
   animation: uneune 30s linear infinite;
   overflow: hidden;
@@ -62,7 +38,7 @@ export default {
 
 .cycleType {
   background: #fc2;
-  border-radius: 40% 70% 50% 30%/40% 50% 30% 50%;
+  /* border-radius: 40% 70% 50% 30%/40% 50% 30% 50%; */
   transition-duration: 0.3s;
 }
 
