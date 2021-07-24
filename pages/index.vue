@@ -114,6 +114,6 @@ export default {
 
 <style lang="postcss" scoped>
 .activeCategory {
-  @apply border-l-4 border-b-4 border-yellow-200 text-yellow-500 xs:text-yellow-300 xs:border-yellow-300;
+  @apply border-l-4 border-b-4 border-yellow-200 text-yellow-500 xs:text-yellow-500 xs:border-yellow-500;
 }
 </style>
