@@ -44,6 +44,7 @@ export default {
     height: 300px;
     bottom: 0px;
     right: 100px;
+    position: fixed;
   }
   .circle {
     width: 300px;

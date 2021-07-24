@@ -1,32 +1,32 @@
 <template>
-  <main class="flex flex-wrap">
-    <div class="w-full lg:w-1/4">
+  <main class="flex flex-wrap xs:w-full">
+    <div class="lg:w-1/4 xs:w-none">
       <!-- <div> -->
       <!-- <nuxt-link :to="linkToCategory(post)">
           {{ post.fields.category.fields.name }}
         </nuxt-link> -->
       <!-- </div> -->
     </div>
-    <div class="w-3/4 lg:w-3/4">
-      <div class="w-3/4">
+    <div class="lg:w-3/4 xs:w-full">
+      <div class="lg:w-3/4 xs:w-full">
         <img
-          class="w-full object-cover h-72"
+          class="w-full object-cover lg:h-72 xs:h-24"
           :src="setHeaderImg(post).url"
           :alt="setHeaderImg(post).title"
         />
       </div>
-      <div class="text-2xl pt-3 font-bold">{{ post.fields.title }}</div>
+      <div class="text-2xl pt-3 xs:pt-6 font-bold">{{ post.fields.title }}</div>
       <div>
         <p>
           <small>{{ $getFormattedDate(post.fields.publishedAt) }}</small>
         </p>
       </div>
-      <div class="w-2/3 mt-5">
+      <div class="lg:w-3/4 xs:w-full mt-5 xs:p-2 leading-loose tracking-wide">
         {{ post.fields.body }}
       </div>
       <NuxtLink to="/">
         <div
-          class="border-t-2 w-3/4 mt-5 py-6 text-right hover:text-yellow-500 transition duration-300 ease-in-out"
+          class="border-t-2 lg:w-3/4 xs:w-full mt-5 py-6 text-right hover:text-yellow-500 transition duration-300 ease-in-out"
         >
           記事一覧にもどる
         </div>
