@@ -9,7 +9,7 @@
         @mouseleave="CardOff"
         :class="{ activeCard: activityCard }"
       >
-        <div class="overflow-hidden h-64">
+        <div class="overflow-hidden w-full h-64">
           <img
             class="w-full h-64 object-cover"
             :src="setHeaderImg(post).url"
