@@ -32,7 +32,7 @@
             :key="index"
             :category="category"
             @click="filterPostData(category.fields.name, index)"
-            class="px-5 py-4 border-l-4 border-b-4 hover:border-yellow-200"
+            class="px-5 pt-4 pb-3 border-b-3 hover:border-yellow-200"
             :class="{ activeCategory: activeItem === index }"
           >
             {{ category.fields.name }}
@@ -114,6 +114,6 @@ export default {
 
 <style lang="postcss" scoped>
 .activeCategory {
-  @apply border-l-4 border-b-4 border-yellow-200 text-yellow-500 xs:text-yellow-500 xs:border-yellow-500;
+  @apply border-b-4 border-yellow-200 text-yellow-500 xs:text-yellow-500 xs:border-yellow-500;
 }
 </style>

@@ -1,8 +1,6 @@
 <template>
   <div class="container">
-    <NuxtLink to="/">
-      <div class="circle cycleType"></div>
-    </NuxtLink>
+    <div class="circle cycleType"></div>
   </div>
 </template>
 <style lang="postcss" scoped>
@@ -32,22 +30,14 @@
   width: 400px;
   height: 400px;
   cursor: pointer;
-  animation: uneune 30s linear infinite;
+  /* animation: uneune 30s linear infinite; */
   overflow: hidden;
-}
-
-.cycleType {
   background: #fc2;
-  /* border-radius: 40% 70% 50% 30%/40% 50% 30% 50%; */
+  border-radius: 40% 70% 50% 30%/40% 50% 30% 50%;
   transition-duration: 0.3s;
 }
 
-.activeCycle {
-  transform: scale(1.2);
-  transition-duration: 0.3s;
-}
-
-@keyframes uneune {
+/* @keyframes uneune {
   0% {
     border-radius: 40% 70% 50% 30%/40% 50% 30% 50%;
   }
@@ -71,5 +61,5 @@
   100% {
     border-radius: 40% 70% 50% 30%/40% 50% 30% 50%;
   }
-}
+} */
 </style>
