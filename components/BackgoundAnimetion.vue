@@ -18,11 +18,11 @@
   /* animation: uneune 15s linear infinite; */
   background: #fc2;
   border-radius: 40% 70% 50% 30%/40% 50% 30% 50%;
-  transition-duration: 0.3s;
+  /* transition-duration: 0.3s; */
   mix-blend-mode: multiply;
 }
 
-@keyframes uneune {
+/* @keyframes uneune {
   0% {
     border-radius: 40% 70% 50% 30%/40% 50% 30% 50%;
   }
@@ -46,5 +46,5 @@
   100% {
     border-radius: 40% 70% 50% 30%/40% 50% 30% 50%;
   }
-}
+} */
 </style>

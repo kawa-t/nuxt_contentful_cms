@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="circle cycleType"></div>
+    <div class="circle"></div>
   </div>
 </template>
 <style lang="postcss" scoped>
@@ -17,12 +17,8 @@
   .container {
     width: 300px;
     height: 300px;
-    bottom: 0px;
+    bottom: -15vh;
     right: 100px;
-  }
-  .circle {
-    width: 300px;
-    height: 300px;
   }
 }
 

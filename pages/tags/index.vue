@@ -1,7 +1,7 @@
 <template>
   <div>
     <span
-      class="badge my-5 mx-2 cursor-pointer"
+      class="badge my-3 mx-2 cursor-pointer"
       v-for="(tag, i) in tags"
       :key="i"
       @click="filterPostData(tag.fields.name)"
