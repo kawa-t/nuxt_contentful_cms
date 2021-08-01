@@ -42,6 +42,7 @@
 <script>
 import { mapState, mapGetters } from "vuex";
 import HeaderNavigation from "../../components/headerNavigation.vue";
+import Prism from "~/plugins/prism.js";
 
 export default {
   computed: {
@@ -71,6 +72,9 @@ export default {
         params: { slug: post.fields.category.fields.slug }
       };
     }
+  },
+  mounted() {
+    Prism.highlightAll();
   }
 };
 </script>
