@@ -3,17 +3,23 @@
     <main class="flex flex-wrap h-screen items-center xs:min-w-full">
       <article class="w-full lg:w-1/4 p-2">
         <div class="mb-18">
-          <div class="text-2xl font-bold">kata</div>
+          <div class="text-2xl font-bold cursor-pointer" @click="allPosts">
+            kata
+          </div>
           <div class="flex mb-4">
             <div
               class="p-3 mx-6 border-white hover:border-yellow-300 transition duration-300 ease-in-out"
             >
-              <a href="https://github.com/kawa-t" target="_blank">github</a>
+              <a href="https://github.com/kawa-t" target="_blank"
+                ><font-awesome-icon :icon="['fab', 'github']"
+              /></a>
             </div>
             <div
               class="p-3 mx-6 border-white hover:border-yellow-300 transition duration-300 ease-in-out"
             >
-              <a href="https://twitter.com/denknit" target="_blank">Twitter</a>
+              <a href="https://twitter.com/denknit" target="_blank">
+                <font-awesome-icon :icon="['fab', 'twitter']"
+              /></a>
             </div>
           </div>
         </div>
