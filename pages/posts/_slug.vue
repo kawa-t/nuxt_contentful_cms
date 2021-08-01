@@ -23,7 +23,7 @@
       </div>
       <div class="lg:w-3/4 xs:w-full mt-5 xs:p-2 leading-loose tracking-wide">
         <div
-          class="markdown"
+          class="markdown tracking-wide"
           style="white-space: pre-wrap;"
           v-html="$md.render(post.fields.body)"
         ></div>
