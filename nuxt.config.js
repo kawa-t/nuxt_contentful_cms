@@ -35,7 +35,7 @@ export default {
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: ["@nuxtjs/tailwindcss"],
+  buildModules: ["@nuxtjs/tailwindcss", "nuxt-webfontloader"],
 
   tailwindcss: {
     viewer: false
@@ -57,6 +57,11 @@ export default {
         icons: ["fab"]
       }
     ]
+  },
+  webfontloader: {
+    google: {
+      families: ["Lato:400,700", "Noto+Sans+JP:400,700"]
+    }
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

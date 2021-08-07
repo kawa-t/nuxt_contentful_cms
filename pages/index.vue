@@ -119,6 +119,9 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
+html {
+  font-family: "Noto Sans JP", sans-serif;
+}
 .activeCategory {
   @apply border-b-4 border-yellow-200 text-yellow-500 xs:text-yellow-500 xs:border-yellow-500;
 }
