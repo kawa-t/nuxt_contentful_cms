@@ -21,7 +21,9 @@
           <small>{{ $getFormattedDate(post.fields.publishedAt) }}</small>
         </p>
       </div>
-      <div class="lg:w-3/4 xs:w-full mt-5 xs:p-2 leading-loose tracking-wide">
+      <div
+        class="lg:w-3/4 xs:w-full mt-5 xs:p-2 lg:leading-loose xs:leading-5 tracking-wide xs:bg-opacity-10"
+      >
         <div
           class="markdown tracking-wide"
           style="white-space: pre-wrap;"
@@ -36,7 +38,9 @@
         </div>
       </NuxtLink>
     </div>
-    <HeaderNavigation />
+    <div class="lg:block xs:hidden">
+      <HeaderNavigation />
+    </div>
   </main>
 </template>
 <script>

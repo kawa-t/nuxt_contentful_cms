@@ -6,19 +6,19 @@
           <div class="text-2xl font-bold cursor-pointer" @click="allPosts">
             kata
           </div>
-          <div class="flex mb-4">
+          <div class="flex my-4">
             <div
               class="p-3 mx-6 border-white hover:border-yellow-300 transition duration-300 ease-in-out"
             >
               <a href="https://github.com/kawa-t" target="_blank"
-                ><font-awesome-icon :icon="['fab', 'github']"
+                ><font-awesome-icon class="text-2xl" :icon="['fab', 'github']"
               /></a>
             </div>
             <div
               class="p-3 mx-6 border-white hover:border-yellow-300 transition duration-300 ease-in-out"
             >
               <a href="https://twitter.com/denknit" target="_blank">
-                <font-awesome-icon :icon="['fab', 'twitter']"
+                <font-awesome-icon class="text-2xl" :icon="['fab', 'twitter']"
               /></a>
             </div>
           </div>
@@ -44,13 +44,15 @@
             {{ category.fields.name }}
           </button>
         </div>
-        <div class="mt-4 ">
+        <div class="mt-4 mb-2">
           <div class="text-3xl font-bold">Tags</div>
           <TagsList />
         </div>
       </article>
       <article class="w-full lg:w-3/4 overflow-hidden">
-        <BackgoundAnimetion />
+        <div class="lg:block xs:hidden">
+          <BackgoundAnimetion />
+        </div>
         <div
           class="flex overflow-x-auto align-items"
           v-if="filterposts.length !== 0"
@@ -123,6 +125,6 @@ html {
   font-family: "Noto Sans JP", sans-serif;
 }
 .activeCategory {
-  @apply border-b-4 border-yellow-200 text-yellow-500 xs:text-yellow-500 xs:border-yellow-500;
+  @apply border-b-4 border-yellow-200 text-yellow-500 xs:text-yellow-400 xs:border-yellow-300;
 }
 </style>

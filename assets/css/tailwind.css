@@ -3,5 +3,5 @@
 @import "tailwindcss/utilities";
 
 .markdown h3 {
-  @apply border-yellow-300 border-l-4 text-2xl;
+  @apply border-yellow-300 border-l-4 text-2xl pl-2;
 }
