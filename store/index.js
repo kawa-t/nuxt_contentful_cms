@@ -1,4 +1,4 @@
-import sdkClient from "@/plugins/contentful.js";
+import sdkClient from "@/plugins/contentful.ts";
 import defaultHeaderimg from "~/assets/images/defaultHeaderimg.png";
 
 export const state = () => ({

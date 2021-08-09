@@ -50,7 +50,7 @@
 <script>
 import { mapState, mapGetters } from "vuex";
 import HeaderNavigation from "../../components/headerNavigation.vue";
-import Prism from "~/plugins/prism.js";
+import Prism from "~/plugins/prism.ts";
 
 export default {
   computed: {
