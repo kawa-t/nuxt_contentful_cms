@@ -3,6 +3,7 @@ const sdkClient = require("./plugins/contentful").default;
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: "static",
+  ssr: "true",
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -29,13 +30,17 @@ export default {
   css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ["@/plugins/utils.js", "~/plugins/prism"],
+  plugins: ["@/plugins/utils.js", "~/plugins/prism", "@/plugins/sanitizehtml"],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: ["@nuxtjs/tailwindcss", "nuxt-webfontloader"],
+  buildModules: [
+    "@nuxtjs/tailwindcss",
+    "nuxt-webfontloader",
+    "@nuxt/typescript-build"
+  ],
 
   tailwindcss: {
     viewer: false

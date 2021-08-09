@@ -18,10 +18,12 @@
         </div>
         <div class="px-6 py-4 pb-2 bg-white">
           <div class="font-bold text-xl mb-2">
-            {{ post.fields.title }}
+            {{ $sanitize(post.fields.title) }}
           </div>
           <div>
-            <small>{{ $getFormattedDate(post.fields.publishedAt) }}</small>
+            <small>{{
+              $sanitize($getFormattedDate(post.fields.publishedAt))
+            }}</small>
           </div>
           <template v-if="post.fields.tags">
             <div class="py-3">
@@ -31,7 +33,7 @@
                 :key="tag.sys.id"
               >
                 <nuxt-link :to="linkToTag(tag)">
-                  {{ tag.fields.name }}
+                  {{ $sanitize(tag.fields.name) }}
                 </nuxt-link>
               </span>
             </div>

@@ -21,10 +21,12 @@
             />
             <div class="px-6 py-4">
               <div class="font-bold text-xl mb-2">
-                {{ post.fields.title }}
+                {{ $sanitize(post.fields.title) }}
               </div>
               <div>
-                <small>{{ $getFormattedDate(post.fields.publishedAt) }}</small>
+                <small>{{
+                  $sanitize($getFormattedDate(post.fields.publishedAt))
+                }}</small>
               </div>
             </div>
           </nuxt-link>

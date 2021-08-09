@@ -3,7 +3,7 @@
     <div class="lg:w-1/4 xs:w-none">
       <!-- <div> -->
       <!-- <nuxt-link :to="linkToCategory(post)">
-          {{ post.fields.category.fields.name }}
+          {{ $sanitize(post.fields.category.fields.name) }}
         </nuxt-link> -->
       <!-- </div> -->
     </div>
@@ -15,10 +15,14 @@
           :alt="setHeaderImg(post).title"
         />
       </div>
-      <div class="text-2xl pt-3 xs:pt-6 font-bold">{{ post.fields.title }}</div>
+      <div class="text-2xl pt-3 xs:pt-6 font-bold">
+        {{ $sanitize(post.fields.title) }}
+      </div>
       <div>
         <p>
-          <small>{{ $getFormattedDate(post.fields.publishedAt) }}</small>
+          <small>{{
+            $sanitize($getFormattedDate(post.fields.publishedAt))
+          }}</small>
         </p>
       </div>
       <div

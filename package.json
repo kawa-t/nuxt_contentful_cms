@@ -10,6 +10,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "@types/sanitize-html": "^2.3.2",
     "core-js": "^3.9.1",
     "nuxt": "^2.15.3",
     "nuxt-webfontloader": "^1.1.0"
@@ -33,6 +34,7 @@
     "nuxt-purgecss": "^1.0.0",
     "postcss": "^8.3.5",
     "prismjs": "^1.24.1",
+    "sanitize-html": "^2.4.0",
     "vue-jest": "^3.0.4"
   }
 }

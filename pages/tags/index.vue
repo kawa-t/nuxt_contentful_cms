@@ -7,7 +7,7 @@
       @click="filterPostData(tag.fields.name)"
     >
       <!-- <nuxt-link :to="linkToTag(tag)"> -->
-      {{ tag.fields.name }}
+      {{ $sanitize(tag.fields.name) }}
       <!-- </nuxt-link> -->
     </span>
   </div>

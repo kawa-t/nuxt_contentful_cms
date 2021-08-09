@@ -41,7 +41,7 @@
             class="px-5 pt-4 pb-3 border-b-3 hover:border-yellow-200"
             :class="{ activeCategory: activeItem === index }"
           >
-            {{ category.fields.name }}
+            {{ $sanitize(category.fields.name) }}
           </button>
         </div>
         <div class="mt-4 mb-2">
