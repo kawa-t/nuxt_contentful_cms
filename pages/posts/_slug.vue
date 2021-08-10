@@ -47,7 +47,7 @@
     </div>
   </main>
 </template>
-<script>
+<script lnag="ts">
 import { mapState, mapGetters } from "vuex";
 import HeaderNavigation from "../../components/headerNavigation.vue";
 import Prism from "~/plugins/prism.ts";
