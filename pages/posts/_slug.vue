@@ -48,11 +48,12 @@
   </main>
 </template>
 <script lnag="ts">
+import Vue from "vue";
 import { mapState, mapGetters } from "vuex";
 import HeaderNavigation from "../../components/headerNavigation.vue";
 import Prism from "~/plugins/prism.ts";
 
-export default {
+export default Vue.extend({
   computed: {
     ...mapState(["posts", "categories"]),
     ...mapGetters(["setHeaderImg"])
@@ -84,5 +85,5 @@ export default {
   mounted() {
     Prism.highlightAll();
   }
-};
+});
 </script>
