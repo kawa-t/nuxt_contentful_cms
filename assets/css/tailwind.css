@@ -3,5 +3,9 @@
 @import "tailwindcss/utilities";
 
 .markdown h3 {
-  @apply border-yellow-300 border-l-4 text-2xl pl-2;
+  @apply border-yellow-300 border-l-4 text-2xl pl-2 my-5;
+}
+
+pre[class*="language-"] {
+  border-radius: 10px;
 }

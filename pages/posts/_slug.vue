@@ -26,7 +26,7 @@
         </p>
       </div>
       <div
-        class="lg:w-3/4 xs:w-full mt-5 xs:p-2 lg:leading-loose xs:leading-5 tracking-wide xs:bg-opacity-10"
+        class="lg:w-3/4 xs:w-full mt-5 xs:p-2 lg:leading-narmal xs:leading-5 tracking-wide xs:bg-opacity-10"
       >
         <div
           class="markdown tracking-wide"
