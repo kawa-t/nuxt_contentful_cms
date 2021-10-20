@@ -50,7 +50,7 @@
           <BackgoundAnimetion />
         </div>
         <div
-          class="flex overflow-x-auto align-items"
+          class="flex flex-wrap align-items justify-center"
           v-if="filterposts.length !== 0"
         >
           <TitleCard
@@ -59,7 +59,7 @@
             :post="post"
           />
         </div>
-        <div class="flex overflow-x-auto" v-else>
+        <div class="flex flex-wrap justify-center" v-else>
           <TitleCard v-for="(post, index) in posts" :key="index" :post="post" />
         </div>
         <div>
