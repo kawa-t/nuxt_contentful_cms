@@ -1,7 +1,7 @@
 <template>
   <client-only>
-    <main class="flex flex-wrap h-screen items-center xs:min-w-full">
-      <article class="w-full lg:w-1/4 p-2">
+    <main class="flex flex-wrap h-screen xs:min-w-full">
+      <article class="max-h-screen flex flex-col justify-center lg:w-1/4 p-2">
         <div class="mb-18">
           <div class="text-2xl font-bold cursor-pointer" @click="allPosts">
             kata
