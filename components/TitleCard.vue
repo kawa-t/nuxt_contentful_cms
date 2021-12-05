@@ -11,9 +11,7 @@
       >
         <div class="overflow-hidden w-full h-64">
           <img
-            height="256"
-            width="513"
-            class="object-cover"
+            class="w-full h-64 object-cover"
             :src="setHeaderImg(post).url"
             :alt="setHeaderImg(post).title"
           />
