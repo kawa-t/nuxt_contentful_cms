@@ -105,7 +105,8 @@ export default {
   @apply transform shadow-xl transition duration-300 ease-in-out;
 }
 .imageDiv {
-  @apply h-64;
+  /* lighthouse対策 */
+  height: 256px;
   width: 513px;
 }
 </style>
