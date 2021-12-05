@@ -11,7 +11,7 @@
       >
         <div class="overflow-hidden w-full h-64">
           <img
-            class="w-full h-64 object-cover"
+            class="imageDiv object-cover"
             :src="setHeaderImg(post).url"
             :alt="setHeaderImg(post).title"
           />
@@ -103,5 +103,9 @@ export default {
 }
 .activeCard {
   @apply transform shadow-xl transition duration-300 ease-in-out;
+}
+.imageDiv {
+  @apply h-64;
+  width: 513px;
 }
 </style>

@@ -28,7 +28,7 @@
         <div
           v-for="(post, i) in relatedTagPosts"
           :key="i"
-          class="p-5 flex-none lg:w-2/5 md:w-2/4 sm:w-1/2 xs:w-full transition duration-300 z-10"
+          class="p-5 flex-none lg:w-2/5 md:w-2/4 sm:w-1/2 xs:w-full transition duration-300 z-10 shadow-lg"
         >
           <nuxt-link :to="linkToPost(post)">
             <img
