@@ -26,42 +26,51 @@
     <article class="w-full lg:w-3/4 overflow-hidden">
       <div class="flex flex-wrap align-items justify-center">
         <div
-          v-for="(post, i) in relatedTagPosts"
-          :key="i"
-          class="p-5 flex-none lg:w-2/5 md:w-2/4 sm:w-1/2 xs:w-full transition duration-300 z-10"
+          v-for="(post, index) in relatedTagPosts"
+          :key="index"
+          :post="post.sys.id"
         >
-          <nuxt-link :to="linkToPost(post)">
-            <div class="max-w-lg rounded overflow-hidden shadow-lg mb-4">
-              <img
-                class="w-full h-64 object-cover"
-                :src="setHeaderImg(post).url"
-                :alt="setHeaderImg(post).title"
-              />
-            </div>
-            <div class="px-6 py-4 pb-2 bg-white">
-              <div class="font-bold text-xl mb-2">
-                {{ $sanitize(post.fields.title) }}
-              </div>
-              <div>
-                <small>{{
-                  $sanitize($getFormattedDate(post.fields.publishedAt))
-                }}</small>
-              </div>
-            </div>
-          </nuxt-link>
-          <template v-if="post.fields.tags">
-            <div class="px-5 pb-3">
-              <span
-                class="badge mr-4"
-                v-for="tag in post.fields.tags"
-                :key="tag.sys.id"
+          <div
+            class="p-5 flex-none lg:w-full md:w-2/4 sm:w-1/2 xs:w-full transition duration-300 z-10"
+          >
+            <nuxt-link :to="linkToPost(post)">
+              <div
+                class="max-w-lg rounded overflow-hidden shadow-lg mb-4"
+                @mouseover="CardOn(post)"
+                @mouseleave="CardOff"
+                :class="{ activeCard: activityCard === post }"
               >
-                <nuxt-link :to="linkToTag(tag)">
-                  {{ $sanitize(tag.fields.name) }}
-                </nuxt-link>
-              </span>
-            </div>
-          </template>
+                <img
+                  class="w-full h-64 object-cover"
+                  :src="setHeaderImg(post).url"
+                  :alt="setHeaderImg(post).title"
+                />
+                <div class="px-6 py-4 pb-2 bg-white">
+                  <div class="font-bold text-xl mb-2">
+                    {{ $sanitize(post.fields.title) }}
+                  </div>
+                  <div>
+                    <small>{{
+                      $sanitize($getFormattedDate(post.fields.publishedAt))
+                    }}</small>
+                  </div>
+                </div>
+                <div v-if="post.fields.tags">
+                  <div class="px-5 pb-5">
+                    <span
+                      class="badge mr-4"
+                      v-for="tag in post.fields.tags"
+                      :key="tag.sys.id"
+                    >
+                      <nuxt-link :to="linkToTag(tag)">
+                        {{ $sanitize(tag.fields.name) }}
+                      </nuxt-link>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </nuxt-link>
+          </div>
         </div>
       </div>
     </article>
@@ -72,6 +81,11 @@ import { mapState, mapGetters } from "vuex";
 import TagsList from "~/pages/tags";
 
 export default {
+  data: function() {
+    return {
+      activityCard: null
+    };
+  },
   asyncData({ payload, params, error, store }) {
     const tag =
       payload || store.state.tags.find(tag => tag.fields.slug === params.slug);
@@ -103,6 +117,16 @@ export default {
         name: "tags-slug",
         params: { slug: tag.fields.slug }
       };
+    },
+    CardOn: function(post) {
+      if (this.activityCard === post) {
+        this.activityCard = null;
+      } else {
+        this.activityCard = post;
+      }
+    },
+    CardOff: function() {
+      this.activityCard = null;
     }
   }
 };
@@ -113,5 +137,8 @@ export default {
   &:hover {
     @apply bg-yellow-200;
   }
+}
+.activeCard {
+  @apply transform shadow-xl transition duration-300 ease-in-out;
 }
 </style>
