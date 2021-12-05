@@ -11,7 +11,9 @@
       >
         <div class="overflow-hidden w-full h-64">
           <img
-            class="imageDiv object-cover"
+            height="256"
+            width="513"
+            class="object-cover"
             :src="setHeaderImg(post).url"
             :alt="setHeaderImg(post).title"
           />
@@ -103,10 +105,5 @@ export default {
 }
 .activeCard {
   @apply transform shadow-xl transition duration-300 ease-in-out;
-}
-.imageDiv {
-  /* lighthouse対策 */
-  height: 256px;
-  width: 513px;
 }
 </style>

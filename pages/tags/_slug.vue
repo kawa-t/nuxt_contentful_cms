@@ -32,7 +32,9 @@
         >
           <nuxt-link :to="linkToPost(post)">
             <img
-              class="w-full h-64 object-cover"
+              height="256"
+              width="513"
+              class="object-cover"
               :src="setHeaderImg(post).url"
               :alt="setHeaderImg(post).title"
             />
