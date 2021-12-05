@@ -25,7 +25,8 @@ export default {
       return { name: "tags-slug", params: { slug: tag.fields.slug } };
     },
     filterPostData: function(name) {
-      this.filterData = this.posts.map(v => v);
+      this.filterData = this.posts.map(v => v); // 空data削除
+
       //   .filter(v => v.fields.tags[0].fields.name === name);
 
       let fileterTagData = [];
@@ -37,7 +38,6 @@ export default {
           }
         }
       }
-
       this.$store.commit("filterposts", fileterTagData);
     }
   }

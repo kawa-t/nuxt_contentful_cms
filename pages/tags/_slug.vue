@@ -1,17 +1,34 @@
 <template>
   <main class="flex flex-wrap h-screen items-center">
     <article class="w-full lg:w-1/4 p-2">
-      <div class="text-3xl font-bold">Tag:{{ tag.fields.name }}</div>
+      <nuxt-link to="/">
+        <div class="text-2xl font-bold cursor-pointer">
+          kata
+        </div>
+      </nuxt-link>
+      <div class="flex my-4">
+        <div
+          class="p-3 mx-6 border-white hover:border-yellow-300 transition duration-300 ease-in-out"
+        >
+          <a href="https://github.com/kawa-t" target="_blank"
+            ><font-awesome-icon class="text-2xl" :icon="['fab', 'github']"
+          /></a>
+        </div>
+        <div
+          class="p-3 mx-6 border-white hover:border-yellow-300 transition duration-300 ease-in-out"
+        ></div>
+      </div>
+      <div class="text-2xl font-bold">Tag:{{ tag.fields.name }}の一覧</div>
       <div>
-        <TagsList />
+        <!-- <TagsList /> // タグ詳細ページには一旦表示させないようにする -->
       </div>
     </article>
-    <article class="w-full lg:w-3/4">
-      <div class="flex overflow-x-auto align-items">
+    <article class="w-full lg:w-3/4 overflow-hidden">
+      <div class="lex flex-wrap align-items justify-center">
         <div
           v-for="(post, i) in relatedTagPosts"
           :key="i"
-          class="max-w-lg rounded overflow-hidden shadow-lg m-6"
+          class="p-5 flex-none lg:w-2/5 md:w-2/4 sm:w-1/2 xs:w-full transition duration-300 z-10"
         >
           <nuxt-link :to="linkToPost(post)">
             <img
@@ -30,6 +47,19 @@
               </div>
             </div>
           </nuxt-link>
+          <template v-if="post.fields.tags">
+            <div class="px-5 pb-3">
+              <span
+                class="badge mr-4"
+                v-for="tag in post.fields.tags"
+                :key="tag.sys.id"
+              >
+                <nuxt-link :to="linkToTag(tag)">
+                  {{ $sanitize(tag.fields.name) }}
+                </nuxt-link>
+              </span>
+            </div>
+          </template>
         </div>
       </div>
     </article>
@@ -37,7 +67,7 @@
 </template>
 <script>
 import { mapState, mapGetters } from "vuex";
-import TagsList from "../tags/";
+import TagsList from "~/pages/tags";
 
 export default {
   asyncData({ payload, params, error, store }) {
@@ -65,7 +95,21 @@ export default {
         name: "posts-slug",
         params: { slug: post.fields.slug }
       };
+    },
+    linkToTag(tag) {
+      return {
+        name: "tags-slug",
+        params: { slug: tag.fields.slug }
+      };
     }
   }
 };
 </script>
+<style lang="postcss" scoped>
+.badge {
+  @apply inline-block bg-yellow-100 rounded-full px-3 py-1 text-sm font-semibold text-yellow-500;
+  &:hover {
+    @apply bg-yellow-200;
+  }
+}
+</style>
