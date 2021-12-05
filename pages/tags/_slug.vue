@@ -24,19 +24,21 @@
       </div>
     </article>
     <article class="w-full lg:w-3/4 overflow-hidden">
-      <div class="lex flex-wrap align-items justify-center">
+      <div class="flex flex-wrap align-items justify-center">
         <div
           v-for="(post, i) in relatedTagPosts"
           :key="i"
-          class="p-5 flex-none lg:w-2/5 md:w-2/4 sm:w-1/2 xs:w-full transition duration-300 z-10 shadow-lg"
+          class="p-5 flex-none lg:w-2/5 md:w-2/4 sm:w-1/2 xs:w-full transition duration-300 z-10"
         >
           <nuxt-link :to="linkToPost(post)">
-            <img
-              class="w-full h-64 object-cover"
-              :src="setHeaderImg(post).url"
-              :alt="setHeaderImg(post).title"
-            />
-            <div class="px-6 py-4">
+            <div class="max-w-lg rounded overflow-hidden shadow-lg mb-4">
+              <img
+                class="w-full h-64 object-cover"
+                :src="setHeaderImg(post).url"
+                :alt="setHeaderImg(post).title"
+              />
+            </div>
+            <div class="px-6 py-4 pb-2 bg-white">
               <div class="font-bold text-xl mb-2">
                 {{ $sanitize(post.fields.title) }}
               </div>
