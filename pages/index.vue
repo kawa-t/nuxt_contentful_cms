@@ -32,7 +32,7 @@
 <script>
 import TitleCard from "../components/TitleCard.vue";
 import TagsList from "../pages/tags";
-import HeaderNavigation from "../components/HeaderNavigation";
+import HeaderNavigation from "../components/headerNavigation";
 import BackgoundAnimetion from "../components/BackgoundAnimetion";
 import SideMenu from "../components/SideMenubar";
 import { mapState } from "vuex";

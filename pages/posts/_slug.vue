@@ -64,7 +64,7 @@
 <script lnag="ts">
 import Vue from "vue";
 import { mapState, mapGetters } from "vuex";
-import HeaderNavigation from "../../components/HeaderNavigation";
+import HeaderNavigation from "../../components/headerNavigation";
 import Prism from "~/plugins/prism.ts";
 
 export default Vue.extend({
