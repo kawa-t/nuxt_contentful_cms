@@ -1,5 +1,5 @@
 import sdkClient from "@/plugins/contentful.ts";
-import defaultHeaderimg from "~/assets/images/defaultHeaderimg.png";
+import defaultHeaderimg from "~/assets/images/defaultHeader.png";
 
 export const state = () => ({
   posts: [],

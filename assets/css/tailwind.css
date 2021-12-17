@@ -6,6 +6,10 @@
   @apply border-yellow-300 border-l-4 text-2xl pl-2 my-5;
 }
 
+.markdown h4 {
+  @apply w-1/2 border-yellow-300 border-l-4 border-b-4 py-2 text-xl pl-2 mt-5 mb-1;
+}
+
 pre[class*="language-"] {
   border-radius: 10px;
 }

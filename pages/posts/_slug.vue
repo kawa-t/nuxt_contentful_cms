@@ -1,11 +1,25 @@
 <template>
   <main class="flex flex-wrap xs:w-full">
     <div class="lg:w-1/4 xs:w-none">
-      <!-- <div> -->
-      <!-- <nuxt-link :to="linkToCategory(post)">
-          {{ $sanitize(post.fields.category.fields.name) }}
-        </nuxt-link> -->
-      <!-- </div> -->
+      <article class="w-full lg:w-1/4 p-2 lg:fixed lg:inset-y-1/2">
+        <nuxt-link to="/">
+          <div class="text-2xl font-bold cursor-pointer">
+            kata
+          </div>
+        </nuxt-link>
+        <div class="flex my-4">
+          <div
+            class="p-3 mx-6 border-white hover:border-yellow-300 transition duration-300 ease-in-out"
+          >
+            <a href="https://github.com/kawa-t" target="_blank"
+              ><font-awesome-icon class="text-2xl" :icon="['fab', 'github']"
+            /></a>
+          </div>
+          <div
+            class="p-3 mx-6 border-white hover:border-yellow-300 transition duration-300 ease-in-out"
+          ></div>
+        </div>
+      </article>
     </div>
     <div class="lg:w-3/4 xs:w-full">
       <div class="lg:w-3/4 xs:w-full">
@@ -50,7 +64,7 @@
 <script lnag="ts">
 import Vue from "vue";
 import { mapState, mapGetters } from "vuex";
-import HeaderNavigation from "../../components/headerNavigation.vue";
+import HeaderNavigation from "../../components/HeaderNavigation";
 import Prism from "~/plugins/prism.ts";
 
 export default Vue.extend({
