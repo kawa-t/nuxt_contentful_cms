@@ -8,7 +8,10 @@
         <div
           class="p-3 mx-6 border-white hover:border-yellow-300 transition duration-300 ease-in-out"
         >
-          <a href="https://github.com/kawa-t" target="_blank"
+          <a
+            href="https://github.com/kawa-t"
+            target="_blank"
+            aria-label="{description}"
             ><font-awesome-icon class="text-2xl" :icon="['fab', 'github']"
           /></a>
         </div>

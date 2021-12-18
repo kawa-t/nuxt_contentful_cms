@@ -98,7 +98,7 @@ export default {
 .badge {
   @apply inline-block bg-yellow-100 rounded-full px-3 py-1 text-sm font-semibold text-yellow-500;
   &:hover {
-    @apply bg-yellow-200;
+    @apply bg-yellow-200 font-semibold text-yellow-600;
   }
 }
 .activeCard {
