@@ -4,7 +4,7 @@
       <article class="max-h-screen flex flex-col justify-center lg:w-1/4 p-2">
         <SideMenu />
       </article>
-      <article class="w-full lg:w-3/4 overflow-hidden">
+      <article class="w-full lg:w-3/4 overflow-hidden pt-4">
         <div class="lg:block xs:hidden">
           <BackgoundAnimetion />
         </div>

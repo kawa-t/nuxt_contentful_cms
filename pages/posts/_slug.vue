@@ -40,7 +40,7 @@
         </p>
       </div>
       <div
-        class="lg:w-3/4 xs:w-full mt-5 xs:p-2 lg:leading-narmal xs:leading-5 tracking-wide xs:bg-opacity-10"
+        class="lg:w-3/4 xs:w-full mt-5 xs:p-2 lg:leading-narmal xs:leading-5 tracking-wide xs:bg-opacity-10 min-h-[80%]"
       >
         <div
           class="markdown tracking-wide"
@@ -52,7 +52,7 @@
         <div
           class="border-t-2 lg:w-3/4 xs:w-full mt-5 py-6 text-right hover:text-yellow-500 transition duration-300 ease-in-out"
         >
-          記事一覧にもどる
+          トップにもどる
         </div>
       </NuxtLink>
     </div>

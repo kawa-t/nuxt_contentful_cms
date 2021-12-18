@@ -9,13 +9,13 @@
         @mouseleave="CardOff"
         :class="{ activeCard: activityCard }"
       >
-        <div class="overflow-hidden w-full h-64">
+        <!-- <div class="overflow-hidden w-full h-64">
           <img
             class="w-full h-64 object-cover"
             :src="setHeaderImg(post).url"
             :alt="setHeaderImg(post).title"
           />
-        </div>
+        </div> -->
         <div class="px-6 py-4 pb-2 bg-white">
           <div class="font-bold text-xl mb-2">
             {{ $sanitize(post.fields.title) }}

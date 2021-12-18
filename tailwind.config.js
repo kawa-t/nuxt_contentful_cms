@@ -14,6 +14,9 @@ module.exports = {
       xs: "375px",
       ...defaultTheme.screens
     },
+    minHeight: {
+      "1/2": "300px"
+    },
     extend: {}
   },
   variants: {
