@@ -22,13 +22,13 @@
       </article>
     </div>
     <div class="lg:w-3/4 xs:w-full">
-      <div class="lg:w-3/4 xs:w-full">
+      <!-- <div class="lg:w-3/4 xs:w-full">
         <img
           class="w-full object-cover lg:h-72 xs:h-24"
           :src="setHeaderImg(post).url"
           :alt="setHeaderImg(post).title"
         />
-      </div>
+      </div> -->
       <div class="text-2xl pt-3 xs:pt-6 font-bold">
         {{ $sanitize(post.fields.title) }}
       </div>
