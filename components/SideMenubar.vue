@@ -24,7 +24,7 @@
       <div class="flex">
         <div class="text-3xl font-bold">Category</div>
         <button
-          class="mx-4 my-2 border-b-2 border-white hover:border-yellow-300 transition duration-300 ease-in-out pt-2"
+          class="mx-4 my-1 border-b-2 border-white hover:border-yellow-300 transition duration-300 ease-in-out pt-2"
           @click="allPosts"
         >
           すべて表示
