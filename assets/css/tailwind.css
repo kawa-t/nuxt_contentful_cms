@@ -7,11 +7,21 @@
 }
 
 .markdown h4 {
-  @apply w-1/2 border-yellow-300 border-l-4 border-b-4 py-2 text-xl pl-2 mt-5 mb-1;
+  @apply lg:w-1/2 sm:w-full border-yellow-300 border-l-4 border-b-4 py-1 text-base pl-2 mt-5 mb-1;
 }
 
 .markdown ui {
   @apply mt-0;
+}
+
+.markdown ul {
+  background: #fffde8;
+  box-shadow: 0px 0px 0px 10px #fffde8; /*線の外側*/
+  border: dashed 2px #ffb03f; /*破線*/
+  border-radius: 9px;
+  margin-left: 10px; /*はみ出ないように調整*/
+  margin-right: 10px; /*はみ出ないように調整*/
+  padding: 0.5em 0.5em 0.5em 2em;
 }
 
 .markdown li {
@@ -21,7 +31,7 @@
   font-weight: bold;
   font-size: 14px;
   line-height: 30px;
-  border-bottom: dashed 1px #385cc1;
+  /* border-bottom: dashed 1px #385cc1; */
 }
 .markdown li:before {
   counter-increment: list;
@@ -33,7 +43,7 @@
   width: 0;
   border-top: 4px solid transparent;
   border-bottom: 4px solid transparent;
-  border-left: 7px solid #385cc1;
+  border-left: 7px solid #f18b0c;
   top: 50%;
   -moz-transform: translateY(-50%);
   -webkit-transform: translateY(-50%);
