@@ -1,6 +1,10 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+@font-face {
+  font-family: "Roboto";
+  src: local("Roboto"), url(./fonts/Roboto-Regular.ttf) format("ttf");
+}
 
 .markdown h3 {
   @apply border-yellow-300 border-l-4 text-2xl pl-2 mt-5 mb-1;

@@ -17,7 +17,11 @@ module.exports = {
     minHeight: {
       "1/2": "300px"
     },
-    extend: {}
+    extend: {
+      fontFamily: {
+        sans: ["Roboto", "Helvetica", "Arial", "sans-serif"]
+      }
+    }
   },
   variants: {
     extend: {}
