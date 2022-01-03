@@ -13,8 +13,39 @@ export default {
     },
     meta: [
       { charset: "utf-8" },
+      { "http-equiv": "x-ua-compatible", content: "ie=edge" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { hid: "description", name: "description", content: "書いていく" }
+      {
+        hid: "description",
+        name: "description",
+        content: "覚えたい事を書いて残しています"
+      },
+      {
+        name: "format-detection",
+        content: "telephone=no, email=no, address=no"
+      },
+      { property: "og:title", content: "kata" },
+      { property: "og:site_name", content: "kata" },
+      { property: "og:locale", content: "ja_JP" },
+      { property: "og:type", content: "website" },
+      { property: "og:description", content: "kata note" },
+      {
+        property: "og:url",
+        content: "https://shikatana.netlify.app/"
+      },
+      {
+        property: "og:image",
+        content: "https://shikatana.netlify.app/images/og_profile_202201.png"
+      },
+      {
+        property: "og:image:width",
+        content: "1200"
+      },
+      {
+        property: "og:image:height",
+        content: "630"
+      },
+      { name: "twitter:card", content: "summary_large_image" }
     ],
     link: [
       {
