@@ -3,7 +3,10 @@
 @import "tailwindcss/utilities";
 @font-face {
   font-family: "Roboto";
-  src: local("Roboto"), url(./fonts/Roboto-Regular.ttf) format("ttf");
+  src: local("Pacifico Regular"), local("Pacifico-Regular"),
+    url(https://fonts.gstatic.com/s/pacifico/v12/FwZY7-Qmy14u9lezJ-6H6MmBp0u-.woff2)
+      format("woff2");
+  font-display: swap;
 }
 
 .markdown h3 {
