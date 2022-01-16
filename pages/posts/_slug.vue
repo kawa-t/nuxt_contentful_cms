@@ -34,9 +34,12 @@
       </div>
       <div>
         <p>
-          <small>{{
+          <small class="mr-3">{{
             $sanitize($getFormattedDate(post.fields.publishedAt))
           }}</small>
+          <small v-if="post.fields.updatedAt"
+            >更新日:{{ $sanitize($getFormattedDate(post.fields.updatedAt)) }}
+          </small>
         </p>
       </div>
       <div
