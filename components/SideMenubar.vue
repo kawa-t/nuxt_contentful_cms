@@ -2,7 +2,11 @@
   <div>
     <div class="mb-18">
       <div class="text-2xl font-bold cursor-pointer" @click="allPosts">
-        kata
+        kata<br />
+        <p class="text-sm font-extralight m-1">
+          フロントエンドメインのエンジニア
+          <br />主にJavaScriptやTypeScriptのメモを残しています
+        </p>
       </div>
       <div class="flex my-4">
         <div
@@ -17,7 +21,14 @@
         </div>
         <div
           class="p-3 mx-6 border-white hover:border-yellow-300 transition duration-300 ease-in-out"
-        ></div>
+        >
+          <a
+            href="https://twitter.com/denknit"
+            target="_blank"
+            aria-label="{description}"
+            ><font-awesome-icon class="text-2xl" :icon="['fab', 'twitter']"
+          /></a>
+        </div>
       </div>
     </div>
     <div>
