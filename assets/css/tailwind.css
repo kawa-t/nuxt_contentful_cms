@@ -26,7 +26,11 @@ html {
 }
 
 .markdown h4 {
-  @apply lg:w-1/2 sm:w-full border-yellow-300 border-l-4 border-b-4 py-1 text-base pl-2 mt-5 mb-1;
+  @apply border-yellow-300 border-l-4 text-2xl pl-2 mt-5 mb-1;
+}
+
+.markdown h5 {
+  @apply text-lg font-bold mt-1;
 }
 
 .markdown ui {

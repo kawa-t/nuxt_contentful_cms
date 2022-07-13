@@ -8,11 +8,11 @@
         </p>
         <p class="text-sm font-extralight mt-5 ml-1">
           言語<br />
-          Vue.js、Nuxt.js、Firebase、AWS
+          Vue.js、Nuxt.js、Node.js、Firebase、AWS
         </p>
         <p class="text-sm font-extralight mt-5 ml-1">
           このブログについて<br />
-          業務とかの振り返りとかを書いています（半年に一回ペース）<br />
+          業務とかの振り返りとかを書いています（だいたい半年に一回ペース）<br />
           Nuxt.js(SSG) × Netlify × Contentfulで作成
         </p>
         <p class="text-sm font-extralight mt-5 ml-1">
