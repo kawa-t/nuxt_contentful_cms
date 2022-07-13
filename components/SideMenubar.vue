@@ -4,10 +4,25 @@
       <div class="text-2xl font-bold cursor-pointer" @click="allPosts">
         kata<br />
         <p class="text-sm font-extralight m-1">
-          フロントエンドメインのエンジニア
-          <br />主にJavaScriptやTypeScriptのメモを残しています
+          フロントエンドエンジニア
+        </p>
+        <p class="text-sm font-extralight mt-5 ml-1">
+          言語<br />
+          Vue.js、Nuxt.js、Firebase、AWS
+        </p>
+        <p class="text-sm font-extralight mt-5 ml-1">
+          このブログについて<br />
+          業務とかの振り返りとかを書いています（半年に一回ペース）<br />
+          Nuxt.js(SSG) × Netlify × Contentfulで作成
+        </p>
+        <p class="text-sm font-extralight mt-5 ml-1">
+          資格<br />
+          基本情報、LPIC(101,102)
         </p>
       </div>
+      <p class="text-sm font-extralight mt-5 ml-1">
+        リンク
+      </p>
       <div class="flex my-4">
         <div
           class="p-3 mx-6 border-white hover:border-yellow-300 transition duration-300 ease-in-out"

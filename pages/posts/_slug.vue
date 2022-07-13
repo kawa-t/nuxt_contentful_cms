@@ -2,7 +2,7 @@
   <main class="flex flex-wrap xs:w-full">
     <div class="lg:w-1/4 xs:w-none">
       <article class="w-full lg:w-1/4 p-2 lg:fixed lg:inset-y-1/2">
-        <nuxt-link to="/">
+        <!-- <nuxt-link to="/">
           <div class="text-2xl font-bold cursor-pointer">
             kata
           </div>
@@ -18,10 +18,15 @@
           <div
             class="p-3 mx-6 border-white hover:border-yellow-300 transition duration-300 ease-in-out"
           ></div>
-        </div>
+        </div> -->
       </article>
     </div>
     <div class="lg:w-3/4 xs:w-full">
+      <nuxt-link to="/">
+        <div class="text-xl mt-3 font-bold cursor-pointer">
+          kata.dev
+        </div>
+      </nuxt-link>
       <!-- <div class="lg:w-3/4 xs:w-full">
         <img
           class="w-full object-cover lg:h-72 xs:h-24"

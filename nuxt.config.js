@@ -7,7 +7,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: "kata-n",
+    title: "kata.dev",
     htmlAttrs: {
       lang: "ja"
     },
@@ -18,7 +18,7 @@ export default {
       {
         hid: "description",
         name: "description",
-        content: "覚えたい事を書いて残しています"
+        content: "日々の振り返りとか"
       },
       {
         name: "format-detection",

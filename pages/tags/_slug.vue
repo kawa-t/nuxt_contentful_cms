@@ -1,12 +1,7 @@
 <template>
   <main class="flex flex-wrap h-screen items-center">
     <article class="w-full lg:w-1/4 p-2">
-      <nuxt-link to="/">
-        <div class="text-2xl font-bold cursor-pointer">
-          kata
-        </div>
-      </nuxt-link>
-      <div class="flex my-4">
+      <!-- <div class="flex my-4">
         <div
           class="p-3 mx-6 border-white hover:border-yellow-300 transition duration-300 ease-in-out"
         >
@@ -19,11 +14,16 @@
         ></div>
       </div>
       <div class="text-2xl font-bold">Tag:{{ tag.fields.name }}の一覧</div>
-      <div>
-        <!-- <TagsList /> // タグ詳細ページには一旦表示させないようにする -->
-      </div>
+      <div> -->
+      <!-- <TagsList /> // タグ詳細ページには一旦表示させないようにする -->
+      <!-- </div> -->
     </article>
     <article class="w-full lg:w-3/4 overflow-hidden">
+      <nuxt-link to="/">
+        <div class="text-2xl font-bold cursor-pointer">
+          HOME
+        </div>
+      </nuxt-link>
       <div class="flex flex-wrap align-items justify-center">
         <div
           v-for="(post, index) in relatedTagPosts"
