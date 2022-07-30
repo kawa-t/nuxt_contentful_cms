@@ -6,23 +6,21 @@
         <p class="text-sm font-extralight m-1">
           フロントエンドエンジニア
         </p>
-        <p class="text-sm font-extralight mt-5 ml-1">
-          言語<br />
-          Vue.js、Nuxt.js、Node.js、Firebase、AWS
+        <div class="text-base mt-5">言語とか</div>
+        <p class="text-sm font-extralight mt-2 ml-1">
+          Vue.js、Nuxt.js、Node.js、Firebase、GCP、AWS
         </p>
-        <p class="text-sm font-extralight mt-5 ml-1">
-          このブログについて<br />
-          業務とかの振り返りとかを書いています（だいたい半年に一回ペース）<br />
+        <div class="text-base mt-5">このブログについて</div>
+        <p class="text-sm font-extralight mt-2 ml-1">
+          業務とかの振り返りとかを書いています<br />(だいたい半年に一回ペース)<br />
           Nuxt.js(SSG) × Netlify × Contentfulで作成
         </p>
-        <p class="text-sm font-extralight mt-5 ml-1">
-          資格<br />
+        <div class="text-base mt-5">資格</div>
+        <p class="text-sm font-extralight mt-2 ml-1">
           基本情報、LPIC(101,102)
         </p>
       </div>
-      <p class="text-sm font-extralight mt-5 ml-1">
-        リンク
-      </p>
+      <!-- <div class="text-base mt-5 ml-1">リンク</div> -->
       <div class="flex my-4">
         <div
           class="p-3 mx-6 border-white hover:border-yellow-300 transition duration-300 ease-in-out"

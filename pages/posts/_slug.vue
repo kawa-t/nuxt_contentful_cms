@@ -24,7 +24,7 @@
     <div class="lg:w-3/4 xs:w-full">
       <nuxt-link to="/">
         <div class="text-xl mt-3 font-bold cursor-pointer">
-          kata.dev
+          kata
         </div>
       </nuxt-link>
       <!-- <div class="lg:w-3/4 xs:w-full">
